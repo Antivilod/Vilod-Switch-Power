@@ -1,0 +1,5 @@
+The MIT license at repository root covers original VSP source, documentation and VSP logo assets.
+Existing third-party copyright notices remain in THIRD-PARTY.txt and licenses/.
+No ownership of third-party names, logos, drivers or libraries is claimed.
+NuGet dependencies are restored separately; no third-party executable or private build is redistributed here.
+The optional PresentMon binary is not included; its upstream license is preserved.

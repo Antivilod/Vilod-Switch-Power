@@ -1,0 +1,96 @@
+VSP 0.8.0 third-party components
+
+LibreHardwareMonitorLib 0.9.6 is unmodified and licensed under MPL-2.0.
+Copyright LibreHardwareMonitor and contributors; partial copyright Michael Moller and contributors.
+Corresponding source: https://github.com/LibreHardwareMonitor/LibreHardwareMonitor/tree/3d331e3370efb858411f19511373eff65a218701
+Source archive: https://github.com/LibreHardwareMonitor/LibreHardwareMonitor/archive/refs/tags/v0.9.6.zip
+No paid monitoring license is required. This is not a certification from an anti-cheat vendor.
+
+BlackSharp.Core/1.0.7 - MPL-2.0; https://licenses.nuget.org/MPL-2.0
+  Source: https://github.com/Blacktempel/BlackSharp; commit c70b735c6cec123ee8a046ac4a0bc6c606f52cf0
+DiskInfoToolkit/1.1.2 - MPL-2.0; https://licenses.nuget.org/MPL-2.0
+  Source: https://github.com/Blacktempel/DiskInfoToolkit; commit 25319eae5781e75bcf141e844ceab2afe94d40ea
+HidSharp/2.6.4 - LICENSE.txt; https://aka.ms/deprecateLicenseUrl
+  Project/source: https://software.seekye.com/hidsharp
+LibreHardwareMonitorLib/0.9.6 - MPL-2.0; https://licenses.nuget.org/MPL-2.0
+  Source: https://github.com/LibreHardwareMonitor/LibreHardwareMonitor; commit 3d331e3370efb858411f19511373eff65a218701
+Mono.Posix.NETStandard/1.0.0 - see package metadata; https://go.microsoft.com/fwlink/?linkid=869050
+  Project/source: https://go.microsoft.com/fwlink/?linkid=869051
+RAMSPDToolkit-NDD/1.4.2 - MPL-2.0; https://licenses.nuget.org/MPL-2.0
+  Source: https://github.com/Blacktempel/RAMSPDToolkit; commit 3b47b960e0830fef344624ad5e389675d5f0a1ce
+runtime.android-arm.runtime.native.System.IO.Ports/10.0.3 - MIT; https://licenses.nuget.org/MIT
+  Source: https://github.com/dotnet/dotnet; commit c2435c3e0f46de784341ac3ed62863ce77e117b4
+runtime.android-arm64.runtime.native.System.IO.Ports/10.0.3 - MIT; https://licenses.nuget.org/MIT
+  Source: https://github.com/dotnet/dotnet; commit c2435c3e0f46de784341ac3ed62863ce77e117b4
+runtime.android-x64.runtime.native.System.IO.Ports/10.0.3 - MIT; https://licenses.nuget.org/MIT
+  Source: https://github.com/dotnet/dotnet; commit c2435c3e0f46de784341ac3ed62863ce77e117b4
+runtime.android-x86.runtime.native.System.IO.Ports/10.0.3 - MIT; https://licenses.nuget.org/MIT
+  Source: https://github.com/dotnet/dotnet; commit c2435c3e0f46de784341ac3ed62863ce77e117b4
+runtime.linux-arm.runtime.native.System.IO.Ports/10.0.3 - MIT; https://licenses.nuget.org/MIT
+  Source: https://github.com/dotnet/dotnet; commit c2435c3e0f46de784341ac3ed62863ce77e117b4
+runtime.linux-arm64.runtime.native.System.IO.Ports/10.0.3 - MIT; https://licenses.nuget.org/MIT
+  Source: https://github.com/dotnet/dotnet; commit c2435c3e0f46de784341ac3ed62863ce77e117b4
+runtime.linux-bionic-arm64.runtime.native.System.IO.Ports/10.0.3 - MIT; https://licenses.nuget.org/MIT
+  Source: https://github.com/dotnet/dotnet; commit c2435c3e0f46de784341ac3ed62863ce77e117b4
+runtime.linux-bionic-x64.runtime.native.System.IO.Ports/10.0.3 - MIT; https://licenses.nuget.org/MIT
+  Source: https://github.com/dotnet/dotnet; commit c2435c3e0f46de784341ac3ed62863ce77e117b4
+runtime.linux-musl-arm.runtime.native.System.IO.Ports/10.0.3 - MIT; https://licenses.nuget.org/MIT
+  Source: https://github.com/dotnet/dotnet; commit c2435c3e0f46de784341ac3ed62863ce77e117b4
+runtime.linux-musl-arm64.runtime.native.System.IO.Ports/10.0.3 - MIT; https://licenses.nuget.org/MIT
+  Source: https://github.com/dotnet/dotnet; commit c2435c3e0f46de784341ac3ed62863ce77e117b4
+runtime.linux-musl-x64.runtime.native.System.IO.Ports/10.0.3 - MIT; https://licenses.nuget.org/MIT
+  Source: https://github.com/dotnet/dotnet; commit c2435c3e0f46de784341ac3ed62863ce77e117b4
+runtime.linux-x64.runtime.native.System.IO.Ports/10.0.3 - MIT; https://licenses.nuget.org/MIT
+  Source: https://github.com/dotnet/dotnet; commit c2435c3e0f46de784341ac3ed62863ce77e117b4
+runtime.maccatalyst-arm64.runtime.native.System.IO.Ports/10.0.3 - MIT; https://licenses.nuget.org/MIT
+  Source: https://github.com/dotnet/dotnet; commit c2435c3e0f46de784341ac3ed62863ce77e117b4
+runtime.maccatalyst-x64.runtime.native.System.IO.Ports/10.0.3 - MIT; https://licenses.nuget.org/MIT
+  Source: https://github.com/dotnet/dotnet; commit c2435c3e0f46de784341ac3ed62863ce77e117b4
+runtime.native.System.IO.Ports/10.0.3 - MIT; https://licenses.nuget.org/MIT
+  Source: https://github.com/dotnet/dotnet; commit c2435c3e0f46de784341ac3ed62863ce77e117b4
+runtime.osx-arm64.runtime.native.System.IO.Ports/10.0.3 - MIT; https://licenses.nuget.org/MIT
+  Source: https://github.com/dotnet/dotnet; commit c2435c3e0f46de784341ac3ed62863ce77e117b4
+runtime.osx-x64.runtime.native.System.IO.Ports/10.0.3 - MIT; https://licenses.nuget.org/MIT
+  Source: https://github.com/dotnet/dotnet; commit c2435c3e0f46de784341ac3ed62863ce77e117b4
+System.CodeDom/10.0.2 - MIT; https://licenses.nuget.org/MIT
+  Source: https://github.com/dotnet/dotnet; commit 44525024595742ebe09023abe709df51de65009b
+System.IO.FileSystem.AccessControl/5.0.0 - MIT; https://licenses.nuget.org/MIT
+  Source: git://github.com/dotnet/runtime; commit cf258a14b70ad9069470a108f13765e0e5988f51
+System.IO.Ports/10.0.3 - MIT; https://licenses.nuget.org/MIT
+  Source: https://github.com/dotnet/dotnet; commit c2435c3e0f46de784341ac3ed62863ce77e117b4
+System.Management/10.0.2 - MIT; https://licenses.nuget.org/MIT
+  Source: https://github.com/dotnet/dotnet; commit 44525024595742ebe09023abe709df51de65009b
+PresentMon 2.4.1 console, Intel Corporation; optional executable not included. MIT license: licenses/PresentMon-LICENSE.txt. Source: https://github.com/GameTechDev/PresentMon/tree/v2.4.1
+
+Resolved dependency list checked on 2026-11-02; no package binaries are included.
+BlackSharp.Core/1.0.7 - MPL-2.0; https://licenses.nuget.org/MPL-2.0
+DiskInfoToolkit/1.1.2 - MPL-2.0; https://licenses.nuget.org/MPL-2.0
+HidSharp/2.6.4 - LICENSE.txt; https://aka.ms/deprecateLicenseUrl
+LibreHardwareMonitorLib/0.9.6 - MPL-2.0; https://licenses.nuget.org/MPL-2.0
+Mono.Posix.NETStandard/1.0.0 - see upstream licenseUrl; https://go.microsoft.com/fwlink/?linkid=869050
+RAMSPDToolkit-NDD/1.4.2 - MPL-2.0; https://licenses.nuget.org/MPL-2.0
+runtime.android-arm.runtime.native.System.IO.Ports/10.0.3 - MIT; https://licenses.nuget.org/MIT
+runtime.android-arm64.runtime.native.System.IO.Ports/10.0.3 - MIT; https://licenses.nuget.org/MIT
+runtime.android-x64.runtime.native.System.IO.Ports/10.0.3 - MIT; https://licenses.nuget.org/MIT
+runtime.android-x86.runtime.native.System.IO.Ports/10.0.3 - MIT; https://licenses.nuget.org/MIT
+runtime.linux-arm.runtime.native.System.IO.Ports/10.0.3 - MIT; https://licenses.nuget.org/MIT
+runtime.linux-arm64.runtime.native.System.IO.Ports/10.0.3 - MIT; https://licenses.nuget.org/MIT
+runtime.linux-bionic-arm64.runtime.native.System.IO.Ports/10.0.3 - MIT; https://licenses.nuget.org/MIT
+runtime.linux-bionic-x64.runtime.native.System.IO.Ports/10.0.3 - MIT; https://licenses.nuget.org/MIT
+runtime.linux-musl-arm.runtime.native.System.IO.Ports/10.0.3 - MIT; https://licenses.nuget.org/MIT
+runtime.linux-musl-arm64.runtime.native.System.IO.Ports/10.0.3 - MIT; https://licenses.nuget.org/MIT
+runtime.linux-musl-x64.runtime.native.System.IO.Ports/10.0.3 - MIT; https://licenses.nuget.org/MIT
+runtime.linux-x64.runtime.native.System.IO.Ports/10.0.3 - MIT; https://licenses.nuget.org/MIT
+runtime.maccatalyst-arm64.runtime.native.System.IO.Ports/10.0.3 - MIT; https://licenses.nuget.org/MIT
+runtime.maccatalyst-x64.runtime.native.System.IO.Ports/10.0.3 - MIT; https://licenses.nuget.org/MIT
+runtime.native.System.IO.Ports/10.0.3 - MIT; https://licenses.nuget.org/MIT
+runtime.osx-arm64.runtime.native.System.IO.Ports/10.0.3 - MIT; https://licenses.nuget.org/MIT
+runtime.osx-x64.runtime.native.System.IO.Ports/10.0.3 - MIT; https://licenses.nuget.org/MIT
+System.CodeDom/10.0.2 - MIT; https://licenses.nuget.org/MIT
+System.Diagnostics.EventLog/10.0.0 - MIT; https://licenses.nuget.org/MIT
+System.IO.FileSystem.AccessControl/5.0.0 - MIT; https://licenses.nuget.org/MIT
+System.IO.Ports/10.0.3 - MIT; https://licenses.nuget.org/MIT
+System.Management/10.0.2 - MIT; https://licenses.nuget.org/MIT
+System.ServiceProcess.ServiceController/10.0.0 - MIT; https://licenses.nuget.org/MIT
+
+Complete resolved metadata: audit/DEPENDENCIES.json. Package license metadata and bundled notices: licenses/.

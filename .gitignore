@@ -1,0 +1,56 @@
+# Build and IDE output
+**/bin/
+**/obj/
+artifacts/
+.vs/
+.idea/
+.vscode/
+TestResults/
+coverage/
+__pycache__/
+*.user
+*.suo
+*.cache
+# Local runtime data and diagnostics (synthetic examples are tracked explicitly)
+Data/
+**/Data/
+**/Machines/
+logs/
+*.log
+*.etl
+*.dmp
+*.pdb
+*.dll
+*.exe
+*.zip
+*.7z
+*.bak
+*.tmp
+*.new
+profiles.json
+monitoring.json
+monitoring-settings.json
+energy-settings.json
+journal.json
+*recovery*.json
+*heartbeat*.json
+*hardware*.json
+# Credentials and environment-specific configuration
+.env
+.env.*
+!.env.example
+*.pfx
+*.p12
+*.pem
+*.key
+*.snk
+*.cer
+*.crt
+credentials*
+secrets*
+NuGet.Config
+nuget.config
+# OS metadata
+Thumbs.db
+Desktop.ini
+.DS_Store
