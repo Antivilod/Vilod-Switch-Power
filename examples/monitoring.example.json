@@ -1,0 +1,14 @@
+{
+  "MonitorIntervalSeconds": 5,
+  "MonitoringHidden": [],
+  "HistorySeconds": 60,
+  "Graphs": [
+    "cpu.load",
+    "gpu.current",
+    "ram.load",
+    "live.fps"
+  ],
+  "NetworkProbeEnabled": false,
+  "NetworkHost": "",
+  "AdvancedSensors": false
+}

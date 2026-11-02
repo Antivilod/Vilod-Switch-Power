@@ -1,0 +1,95 @@
+{
+  "Schema": 1,
+  "Selected": "work",
+  "DiscoverSteamGames": false,
+  "SteamPresets": [],
+  "DefaultGameProfile": "120",
+  "Profiles": [
+    {
+      "Id": "60",
+      "Name": "60 FPS",
+      "Fps": 60,
+      "Epp": 70,
+      "GpuPercent": 0,
+      "Boost": false,
+      "Strategy": "Авто"
+    },
+    {
+      "Id": "120",
+      "Name": "120 FPS",
+      "Fps": 120,
+      "Epp": 50,
+      "GpuPercent": 0,
+      "Boost": false,
+      "Strategy": "Авто"
+    },
+    {
+      "Id": "200",
+      "Name": "200 FPS",
+      "Fps": 200,
+      "Epp": 30,
+      "GpuPercent": 0,
+      "Boost": false,
+      "Strategy": "Авто"
+    },
+    {
+      "Id": "custom",
+      "Name": "Пользовательский",
+      "Fps": 300,
+      "Epp": 50,
+      "GpuPercent": 0,
+      "Boost": false,
+      "Strategy": "Авто"
+    },
+    {
+      "Id": "work",
+      "Name": "Работа",
+      "Fps": null,
+      "Epp": 80,
+      "GpuPercent": 0,
+      "Boost": false,
+      "Strategy": "Авто"
+    },
+    {
+      "Id": "boost",
+      "Name": "Game Boost",
+      "Fps": 200,
+      "Epp": 0,
+      "GpuPercent": 100,
+      "Boost": true,
+      "Strategy": "Больше плавности"
+    },
+    {
+      "Id": "400",
+      "Name": "400 FPS",
+      "Fps": 400,
+      "Epp": 30,
+      "GpuPercent": 95,
+      "Boost": false,
+      "Strategy": "Авто"
+    },
+    {
+      "Id": "competitive",
+      "Name": "Соревновательный · 400 FPS",
+      "Fps": 400,
+      "Epp": 0,
+      "GpuPercent": 100,
+      "Boost": true,
+      "Strategy": "Больше плавности"
+    }
+  ],
+  "Games": [],
+  "Automatic": false,
+  "LightTheme": false,
+  "GlobalFps": false,
+  "ResumeOnLaunch": false,
+  "WasEnabled": false,
+  "AutoClean": false,
+  "MemoryTrigger": "Either",
+  "PauseCleanInGames": true,
+  "MemoryWarningThreshold": 80,
+  "MemoryThreshold": 90,
+  "CleanIntervalMinutes": 20,
+  "BackgroundApps": [],
+  "DelaySeconds": 30
+}
