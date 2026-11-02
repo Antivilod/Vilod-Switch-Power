@@ -1,0 +1,408 @@
+{
+  "schema": 1,
+  "version": "0.8.0",
+  "checkedOn": "2026-11-02",
+  "source": "https://api.nuget.org/v3/index.json",
+  "scope": "Resolved package graph for Monitor and Service; no binaries included; no lock file supplied.",
+  "knownVulnerabilitiesReported": 0,
+  "packages": [
+    {
+      "id": "BlackSharp.Core",
+      "version": "1.0.7",
+      "license": "MPL-2.0",
+      "licenseUrl": "https://licenses.nuget.org/MPL-2.0",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/Blacktempel/BlackSharp",
+        "commit": "c70b735c6cec123ee8a046ac4a0bc6c606f52cf0"
+      },
+      "usedBy": [
+        "QuietPC.Monitor"
+      ]
+    },
+    {
+      "id": "DiskInfoToolkit",
+      "version": "1.1.2",
+      "license": "MPL-2.0",
+      "licenseUrl": "https://licenses.nuget.org/MPL-2.0",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/Blacktempel/DiskInfoToolkit",
+        "commit": "25319eae5781e75bcf141e844ceab2afe94d40ea"
+      },
+      "usedBy": [
+        "QuietPC.Monitor"
+      ]
+    },
+    {
+      "id": "HidSharp",
+      "version": "2.6.4",
+      "license": "LICENSE.txt",
+      "licenseUrl": "https://aka.ms/deprecateLicenseUrl",
+      "source": {},
+      "usedBy": [
+        "QuietPC.Monitor"
+      ]
+    },
+    {
+      "id": "LibreHardwareMonitorLib",
+      "version": "0.9.6",
+      "license": "MPL-2.0",
+      "licenseUrl": "https://licenses.nuget.org/MPL-2.0",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/LibreHardwareMonitor/LibreHardwareMonitor",
+        "commit": "3d331e3370efb858411f19511373eff65a218701"
+      },
+      "usedBy": [
+        "QuietPC.Monitor"
+      ]
+    },
+    {
+      "id": "Mono.Posix.NETStandard",
+      "version": "1.0.0",
+      "license": null,
+      "licenseUrl": "https://go.microsoft.com/fwlink/?linkid=869050",
+      "source": {},
+      "usedBy": [
+        "QuietPC.Monitor"
+      ]
+    },
+    {
+      "id": "RAMSPDToolkit-NDD",
+      "version": "1.4.2",
+      "license": "MPL-2.0",
+      "licenseUrl": "https://licenses.nuget.org/MPL-2.0",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/Blacktempel/RAMSPDToolkit",
+        "commit": "3b47b960e0830fef344624ad5e389675d5f0a1ce"
+      },
+      "usedBy": [
+        "QuietPC.Monitor"
+      ]
+    },
+    {
+      "id": "runtime.android-arm.runtime.native.System.IO.Ports",
+      "version": "10.0.3",
+      "license": "MIT",
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/dotnet/dotnet",
+        "commit": "c2435c3e0f46de784341ac3ed62863ce77e117b4"
+      },
+      "usedBy": [
+        "QuietPC.Monitor"
+      ]
+    },
+    {
+      "id": "runtime.android-arm64.runtime.native.System.IO.Ports",
+      "version": "10.0.3",
+      "license": "MIT",
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/dotnet/dotnet",
+        "commit": "c2435c3e0f46de784341ac3ed62863ce77e117b4"
+      },
+      "usedBy": [
+        "QuietPC.Monitor"
+      ]
+    },
+    {
+      "id": "runtime.android-x64.runtime.native.System.IO.Ports",
+      "version": "10.0.3",
+      "license": "MIT",
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/dotnet/dotnet",
+        "commit": "c2435c3e0f46de784341ac3ed62863ce77e117b4"
+      },
+      "usedBy": [
+        "QuietPC.Monitor"
+      ]
+    },
+    {
+      "id": "runtime.android-x86.runtime.native.System.IO.Ports",
+      "version": "10.0.3",
+      "license": "MIT",
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/dotnet/dotnet",
+        "commit": "c2435c3e0f46de784341ac3ed62863ce77e117b4"
+      },
+      "usedBy": [
+        "QuietPC.Monitor"
+      ]
+    },
+    {
+      "id": "runtime.linux-arm.runtime.native.System.IO.Ports",
+      "version": "10.0.3",
+      "license": "MIT",
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/dotnet/dotnet",
+        "commit": "c2435c3e0f46de784341ac3ed62863ce77e117b4"
+      },
+      "usedBy": [
+        "QuietPC.Monitor"
+      ]
+    },
+    {
+      "id": "runtime.linux-arm64.runtime.native.System.IO.Ports",
+      "version": "10.0.3",
+      "license": "MIT",
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/dotnet/dotnet",
+        "commit": "c2435c3e0f46de784341ac3ed62863ce77e117b4"
+      },
+      "usedBy": [
+        "QuietPC.Monitor"
+      ]
+    },
+    {
+      "id": "runtime.linux-bionic-arm64.runtime.native.System.IO.Ports",
+      "version": "10.0.3",
+      "license": "MIT",
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/dotnet/dotnet",
+        "commit": "c2435c3e0f46de784341ac3ed62863ce77e117b4"
+      },
+      "usedBy": [
+        "QuietPC.Monitor"
+      ]
+    },
+    {
+      "id": "runtime.linux-bionic-x64.runtime.native.System.IO.Ports",
+      "version": "10.0.3",
+      "license": "MIT",
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/dotnet/dotnet",
+        "commit": "c2435c3e0f46de784341ac3ed62863ce77e117b4"
+      },
+      "usedBy": [
+        "QuietPC.Monitor"
+      ]
+    },
+    {
+      "id": "runtime.linux-musl-arm.runtime.native.System.IO.Ports",
+      "version": "10.0.3",
+      "license": "MIT",
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/dotnet/dotnet",
+        "commit": "c2435c3e0f46de784341ac3ed62863ce77e117b4"
+      },
+      "usedBy": [
+        "QuietPC.Monitor"
+      ]
+    },
+    {
+      "id": "runtime.linux-musl-arm64.runtime.native.System.IO.Ports",
+      "version": "10.0.3",
+      "license": "MIT",
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/dotnet/dotnet",
+        "commit": "c2435c3e0f46de784341ac3ed62863ce77e117b4"
+      },
+      "usedBy": [
+        "QuietPC.Monitor"
+      ]
+    },
+    {
+      "id": "runtime.linux-musl-x64.runtime.native.System.IO.Ports",
+      "version": "10.0.3",
+      "license": "MIT",
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/dotnet/dotnet",
+        "commit": "c2435c3e0f46de784341ac3ed62863ce77e117b4"
+      },
+      "usedBy": [
+        "QuietPC.Monitor"
+      ]
+    },
+    {
+      "id": "runtime.linux-x64.runtime.native.System.IO.Ports",
+      "version": "10.0.3",
+      "license": "MIT",
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/dotnet/dotnet",
+        "commit": "c2435c3e0f46de784341ac3ed62863ce77e117b4"
+      },
+      "usedBy": [
+        "QuietPC.Monitor"
+      ]
+    },
+    {
+      "id": "runtime.maccatalyst-arm64.runtime.native.System.IO.Ports",
+      "version": "10.0.3",
+      "license": "MIT",
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/dotnet/dotnet",
+        "commit": "c2435c3e0f46de784341ac3ed62863ce77e117b4"
+      },
+      "usedBy": [
+        "QuietPC.Monitor"
+      ]
+    },
+    {
+      "id": "runtime.maccatalyst-x64.runtime.native.System.IO.Ports",
+      "version": "10.0.3",
+      "license": "MIT",
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/dotnet/dotnet",
+        "commit": "c2435c3e0f46de784341ac3ed62863ce77e117b4"
+      },
+      "usedBy": [
+        "QuietPC.Monitor"
+      ]
+    },
+    {
+      "id": "runtime.native.System.IO.Ports",
+      "version": "10.0.3",
+      "license": "MIT",
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/dotnet/dotnet",
+        "commit": "c2435c3e0f46de784341ac3ed62863ce77e117b4"
+      },
+      "usedBy": [
+        "QuietPC.Monitor"
+      ]
+    },
+    {
+      "id": "runtime.osx-arm64.runtime.native.System.IO.Ports",
+      "version": "10.0.3",
+      "license": "MIT",
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/dotnet/dotnet",
+        "commit": "c2435c3e0f46de784341ac3ed62863ce77e117b4"
+      },
+      "usedBy": [
+        "QuietPC.Monitor"
+      ]
+    },
+    {
+      "id": "runtime.osx-x64.runtime.native.System.IO.Ports",
+      "version": "10.0.3",
+      "license": "MIT",
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/dotnet/dotnet",
+        "commit": "c2435c3e0f46de784341ac3ed62863ce77e117b4"
+      },
+      "usedBy": [
+        "QuietPC.Monitor"
+      ]
+    },
+    {
+      "id": "System.CodeDom",
+      "version": "10.0.2",
+      "license": "MIT",
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/dotnet/dotnet",
+        "commit": "44525024595742ebe09023abe709df51de65009b"
+      },
+      "usedBy": [
+        "QuietPC.Monitor"
+      ]
+    },
+    {
+      "id": "System.Diagnostics.EventLog",
+      "version": "10.0.0",
+      "license": "MIT",
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/dotnet/dotnet",
+        "commit": "b0f34d51fccc69fd334253924abd8d6853fad7aa"
+      },
+      "usedBy": [
+        "QuietPC.Service"
+      ]
+    },
+    {
+      "id": "System.IO.FileSystem.AccessControl",
+      "version": "5.0.0",
+      "license": "MIT",
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "source": {
+        "type": "git",
+        "url": "git://github.com/dotnet/runtime",
+        "commit": "cf258a14b70ad9069470a108f13765e0e5988f51"
+      },
+      "usedBy": [
+        "QuietPC.Monitor"
+      ]
+    },
+    {
+      "id": "System.IO.Ports",
+      "version": "10.0.3",
+      "license": "MIT",
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/dotnet/dotnet",
+        "commit": "c2435c3e0f46de784341ac3ed62863ce77e117b4"
+      },
+      "usedBy": [
+        "QuietPC.Monitor"
+      ]
+    },
+    {
+      "id": "System.Management",
+      "version": "10.0.2",
+      "license": "MIT",
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/dotnet/dotnet",
+        "commit": "44525024595742ebe09023abe709df51de65009b"
+      },
+      "usedBy": [
+        "QuietPC.Monitor"
+      ]
+    },
+    {
+      "id": "System.ServiceProcess.ServiceController",
+      "version": "10.0.0",
+      "license": "MIT",
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/dotnet/dotnet",
+        "commit": "b0f34d51fccc69fd334253924abd8d6853fad7aa"
+      },
+      "usedBy": [
+        "QuietPC.Service"
+      ]
+    }
+  ]
+}

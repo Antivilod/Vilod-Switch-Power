@@ -1,0 +1,1031 @@
+{
+  "schema": 1,
+  "version": "0.8.0",
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 172,
+      "sha256": "44ea1fe1ec465de11191f0fd98eda78d1137f3aa9d0a24153adf1f4093f9a308",
+      "kind": "documentation-or-config"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 661,
+      "sha256": "5471b092b91458b0581c4295c69e336608258ee7a5d040b792f88737cdecbb58",
+      "kind": "documentation-or-config"
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "bytes": 641,
+      "sha256": "deb5b83d6e49643c5a0471b10bba2df80b7662df24fe8b9a1baa6bda6f0ff8a5",
+      "kind": "documentation-or-config"
+    },
+    {
+      "path": "Directory.Build.props",
+      "bytes": 473,
+      "sha256": "4bb961686b847ce556b8709eedffd713e5c884d837cf5587dfdc2fc1d57d3e38",
+      "kind": "documentation-or-config"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1088,
+      "sha256": "cfa73aa2b2e501561556cdb21f39c868ac79da633589b6f8a5914c211e623357",
+      "kind": "documentation-or-config"
+    },
+    {
+      "path": "NOTICE",
+      "bytes": 446,
+      "sha256": "8e4dd24bc2cce433855c1f8fda48ae4256a12a68110516c574e4fa8bed9e0207",
+      "kind": "documentation-or-config"
+    },
+    {
+      "path": "NuGet.public.config",
+      "bytes": 198,
+      "sha256": "593813d027ae058c94c59138c6618d9b3526a825d91db6e0e3bec2c5d60c07fc",
+      "kind": "documentation-or-config"
+    },
+    {
+      "path": "README.md",
+      "bytes": 9886,
+      "sha256": "2a52661e0403c38bfee261c34b5de12859803c1c1e220796646c1f638c08f1fd",
+      "kind": "documentation-or-config"
+    },
+    {
+      "path": "SECURITY.md",
+      "bytes": 778,
+      "sha256": "7aab7a0461f2a316c097672ebbb2d6ba5dc632bdad28a3dab126c53875abf14c",
+      "kind": "documentation-or-config"
+    },
+    {
+      "path": "THIRD-PARTY.txt",
+      "bytes": 8255,
+      "sha256": "bc636f4dfa5e341a71bcab6048ef35596e2e1e018274968e5e45ed10281b57c2",
+      "kind": "documentation-or-config"
+    },
+    {
+      "path": "audit/AUDIT-REPORT.md",
+      "bytes": 7813,
+      "sha256": "ebe8b15b9d2a264addf41a17acaaed8bc6908df3d26f382ee45d926840f946a4",
+      "kind": "documentation-or-config"
+    },
+    {
+      "path": "audit/DEPENDENCIES.json",
+      "bytes": 11307,
+      "sha256": "fffd260fcbc1bdf6a0c1159b820e64dc6c15653a3b0b8ec06dc52e80784b8fc5",
+      "kind": "documentation-or-config"
+    },
+    {
+      "path": "audit/INVENTORY.md",
+      "bytes": 2553,
+      "sha256": "674bdfed170a3f2c98a0a30e1541f84b5ed4a1a7cebce29190677d894bfe0612",
+      "kind": "documentation-or-config"
+    },
+    {
+      "path": "audit/PUBLICATION-CHECK.md",
+      "bytes": 9356,
+      "sha256": "e9fe43d0ddf177c448f43434db1d8cafe2f01c73f06b2b9c6cef75e76e104b1e",
+      "kind": "documentation-or-config"
+    },
+    {
+      "path": "docs/BUILD.md",
+      "bytes": 4632,
+      "sha256": "c4655275edb108040dc99817e82e819ea280292f3a78c3b5d175a914837aa81c",
+      "kind": "documentation-or-config"
+    },
+    {
+      "path": "docs/COMPETITIVE-RU.txt",
+      "bytes": 4339,
+      "sha256": "25081b37548decf7740f8bf215723e99df60f96511247cee02f19326dfd85e26",
+      "kind": "documentation-or-config"
+    },
+    {
+      "path": "docs/CONFIGURATION.md",
+      "bytes": 2368,
+      "sha256": "f37fd70b6a2bc2e8f988d92380adf539306f810510cf05df5874ff441223af77",
+      "kind": "documentation-or-config"
+    },
+    {
+      "path": "docs/DESIGN-VSP-RU.md",
+      "bytes": 4753,
+      "sha256": "e86b089128c199d226d88aa63edeb3e47901ed2d09cc2b5acdc31f164ca1a5f2",
+      "kind": "documentation-or-config"
+    },
+    {
+      "path": "docs/ENERGY-GPU-RU.txt",
+      "bytes": 3312,
+      "sha256": "9b64dab8dccd38a220931bb96fdc6ee468b8919d79a53b715eab7911166d8658",
+      "kind": "documentation-or-config"
+    },
+    {
+      "path": "docs/MONITORING-RU.txt",
+      "bytes": 4993,
+      "sha256": "7b381cdd7c30f185ec44311216cabd7aba4aa8dcffdc9e7cb8cfd4d2d58616c5",
+      "kind": "documentation-or-config"
+    },
+    {
+      "path": "docs/RELEASE-NOTES.md",
+      "bytes": 2385,
+      "sha256": "f8532f49aaf16448f52fedeb90ca15a0f8912cdb6a1568faaa6ffbffd03c13c3",
+      "kind": "documentation-or-config"
+    },
+    {
+      "path": "examples/energy-settings.example.json",
+      "bytes": 20,
+      "sha256": "54a6a0d2468d8f917187b608cd7a63872a1513697817ad20ea42e99fa27b3fed",
+      "kind": "documentation-or-config"
+    },
+    {
+      "path": "examples/monitoring.example.json",
+      "bytes": 250,
+      "sha256": "0515aeb3df69f73fc0310aa0c6891785bce88166e81e65b29b192512d43983e4",
+      "kind": "documentation-or-config"
+    },
+    {
+      "path": "examples/profiles.example.json",
+      "bytes": 1945,
+      "sha256": "fbf396ab0e563a65650ee776a15abd657cf95074209fe32cd7f8ba79cd2f05f5",
+      "kind": "documentation-or-config"
+    },
+    {
+      "path": "global.json",
+      "bytes": 85,
+      "sha256": "a63b77552b51f013c7db69270edd0055d64edbe77cdd5b0b9584dfdeefac10c5",
+      "kind": "documentation-or-config"
+    },
+    {
+      "path": "legacy/backend-0.3.8/Directory.Build.props",
+      "bytes": 433,
+      "sha256": "875dea936b660318b766f4ae06fcd1d1c05d86a08cf6e189e19cddbc876b8d88",
+      "kind": "documentation-or-config"
+    },
+    {
+      "path": "legacy/backend-0.3.8/README.md",
+      "bytes": 390,
+      "sha256": "0a7567ffdca2e9bf15e4f34079c71eea9acb97985ecf81894457c4afefbe8224",
+      "kind": "documentation-or-config"
+    },
+    {
+      "path": "legacy/backend-0.3.8/global.json",
+      "bytes": 85,
+      "sha256": "a63b77552b51f013c7db69270edd0055d64edbe77cdd5b0b9584dfdeefac10c5",
+      "kind": "documentation-or-config"
+    },
+    {
+      "path": "legacy/backend-0.3.8/src/QuietPC.Core/FpsRecovery.cs",
+      "bytes": 3482,
+      "sha256": "9f92455625e2929c54de728129dc4bf849f13b751fc72be5581bf21a640c47cc",
+      "kind": "source"
+    },
+    {
+      "path": "legacy/backend-0.3.8/src/QuietPC.Core/GameBoost.cs",
+      "bytes": 3669,
+      "sha256": "c085119f1cb669d64363f123bb4e122ec9ceb136ad63f2f00a702eff4da573cf",
+      "kind": "source"
+    },
+    {
+      "path": "legacy/backend-0.3.8/src/QuietPC.Core/GpuRecovery.cs",
+      "bytes": 2700,
+      "sha256": "640cc5857a1a0f4bcd651855bdd01b5252ad689bc9269fcbad8a0533a08c3edb",
+      "kind": "source"
+    },
+    {
+      "path": "legacy/backend-0.3.8/src/QuietPC.Core/MemoryLevel.cs",
+      "bytes": 668,
+      "sha256": "dc1090b61079318ab12795141713bb08679e24064e7ca846a42cb7d44e30bb56",
+      "kind": "source"
+    },
+    {
+      "path": "legacy/backend-0.3.8/src/QuietPC.Core/MemorySchedule.cs",
+      "bytes": 1053,
+      "sha256": "798992d6657de48e031dbfa2f1d265416dec5c096b97e808a0ac0ca7c5851ced",
+      "kind": "source"
+    },
+    {
+      "path": "legacy/backend-0.3.8/src/QuietPC.Core/Models.cs",
+      "bytes": 9483,
+      "sha256": "a296c3e4a866fd5196b6e3a287a3d16b3425e3cada43701e73d053ce9dc7c14e",
+      "kind": "source"
+    },
+    {
+      "path": "legacy/backend-0.3.8/src/QuietPC.Core/QuietPC.Core.csproj",
+      "bytes": 35,
+      "sha256": "3e1a9f612f8cfcc2e2a8b2ef085685f9f3d1a55c4b901e8d88af6ec37d283195",
+      "kind": "source"
+    },
+    {
+      "path": "legacy/backend-0.3.8/src/QuietPC.Core/SteamLibrary.cs",
+      "bytes": 5916,
+      "sha256": "d2ad5b0a95d8e6963cd06200c11b951f0412f9bf62821339846403941d4c21e0",
+      "kind": "source"
+    },
+    {
+      "path": "legacy/backend-0.3.8/src/QuietPC.Service/Program.cs",
+      "bytes": 8333,
+      "sha256": "52dd931b039494af1b8510df44baf15c46167b213fe799e72a8f5b492a8c50b8",
+      "kind": "source"
+    },
+    {
+      "path": "legacy/backend-0.3.8/src/QuietPC.Service/QuietPC.Service.csproj",
+      "bytes": 397,
+      "sha256": "1f3a0afe6d8f8e64e1dd186499cb54e3106697e0a0b010bc170d19f23a3608f4",
+      "kind": "source"
+    },
+    {
+      "path": "legacy/backend-0.3.8/src/QuietPC.Windows/MemoryCleaner.cs",
+      "bytes": 2254,
+      "sha256": "8a82d03e9faafa9b5b9b81408e192d09fb5fe6c6a42fee6aab98e18ff55614ef",
+      "kind": "source"
+    },
+    {
+      "path": "legacy/backend-0.3.8/src/QuietPC.Windows/NvidiaDrs.cs",
+      "bytes": 4897,
+      "sha256": "faf45a877df51dea04c0ba6e4abcf7d7e692e3009663f83ebe70a57dbed499cf",
+      "kind": "source"
+    },
+    {
+      "path": "legacy/backend-0.3.8/src/QuietPC.Windows/NvidiaPower.cs",
+      "bytes": 2744,
+      "sha256": "a84314f4b9ea7f4f0f66e2f4870ce86ec22a5fd12f1894befb99b8c8e7c6b689",
+      "kind": "source"
+    },
+    {
+      "path": "legacy/backend-0.3.8/src/QuietPC.Windows/ProcessPriority.cs",
+      "bytes": 2008,
+      "sha256": "a8fbcc1f955317fc56ba9cfdd246c7e430422994c3d45d2d286999c804f9f039",
+      "kind": "source"
+    },
+    {
+      "path": "legacy/backend-0.3.8/src/QuietPC.Windows/QuietPC.Windows.csproj",
+      "bytes": 213,
+      "sha256": "e95bcb1211c7dd0f0937c2959394873486af670a5d447647166c6d5c32ad2a83",
+      "kind": "source"
+    },
+    {
+      "path": "legacy/backend-0.3.8/src/QuietPC.Windows/Sensors.cs",
+      "bytes": 1879,
+      "sha256": "9d8eaf52c22e18d57eeb72605866df163aab69dbadc97df2ded00f4998a1419a",
+      "kind": "source"
+    },
+    {
+      "path": "legacy/backend-0.3.8/src/QuietPC.Windows/WindowsPower.cs",
+      "bytes": 5047,
+      "sha256": "58f92a709954d9a976f268d418e63e65846952796144ba7f201aae51a350dc27",
+      "kind": "source"
+    },
+    {
+      "path": "licenses/BlackSharp.Core-1.0.7/blacksharp.core.nuspec",
+      "bytes": 1076,
+      "sha256": "fded795614ebd1e3880e6cf63b268bbe346bc40e7a228c1614ee5719064ad1cb",
+      "kind": "third-party-license"
+    },
+    {
+      "path": "licenses/DiskInfoToolkit-1.1.2/diskinfotoolkit.nuspec",
+      "bytes": 2034,
+      "sha256": "f2e674e92987764c958a70c400c64299a6e1ed99c76a558cca4222a809eb0f2d",
+      "kind": "third-party-license"
+    },
+    {
+      "path": "licenses/HidSharp-2.6.4/LICENSE.txt",
+      "bytes": 10784,
+      "sha256": "b065e07179f06490c96bf946e73f821086b2f29efde395f092aea69a907eae16",
+      "kind": "third-party-license"
+    },
+    {
+      "path": "licenses/HidSharp-2.6.4/hidsharp.nuspec",
+      "bytes": 6450,
+      "sha256": "cf8a58553f7f012fc2fc8b0363f329315a2bf4198612d19b2b087913a5dc56a0",
+      "kind": "third-party-license"
+    },
+    {
+      "path": "licenses/LibreHardwareMonitor-MPL-2.0.txt",
+      "bytes": 16725,
+      "sha256": "1f256ecad192880510e84ad60474eab7589218784b9a50bc7ceee34c2b91f1d5",
+      "kind": "third-party-license"
+    },
+    {
+      "path": "licenses/LibreHardwareMonitor-THIRD-PARTY.txt",
+      "bytes": 25905,
+      "sha256": "a60d5ee62f4d700caff38566f42874d554b8b530437c72804fb28b958cfbda9b",
+      "kind": "third-party-license"
+    },
+    {
+      "path": "licenses/LibreHardwareMonitorLib-0.9.6/librehardwaremonitorlib.nuspec",
+      "bytes": 4459,
+      "sha256": "c8fcc00cc9aa7761950289f8b069a16f7573be602ba2b06ec2746af571ed89f0",
+      "kind": "third-party-license"
+    },
+    {
+      "path": "licenses/Mono.Posix.NETStandard-1.0.0/mono.posix.netstandard.nuspec",
+      "bytes": 795,
+      "sha256": "6a70ee7faab2c769e30d11ba3f2109e767fb88471fe9f59e8715fcec5d688f5c",
+      "kind": "third-party-license"
+    },
+    {
+      "path": "licenses/PresentMon-LICENSE.txt",
+      "bytes": 1067,
+      "sha256": "4c949341b1893c8c6ad82f7fb4eedf622cd1fd9c22a9af8f19b2dac19d1947b6",
+      "kind": "third-party-license"
+    },
+    {
+      "path": "licenses/RAMSPDToolkit-NDD-1.4.2/ramspdtoolkit-ndd.nuspec",
+      "bytes": 2413,
+      "sha256": "34464b97160d12ae65442f5ff390bfe5d8166e8e1ffbcf8d2671854a1ae88eb5",
+      "kind": "third-party-license"
+    },
+    {
+      "path": "licenses/System.CodeDom-10.0.2/THIRD-PARTY-NOTICES.TXT",
+      "bytes": 76623,
+      "sha256": "66f1d4e44973185519bb4aa8a9718eb22fc7af2cc532e3ae9cfc4c127ee7fc54",
+      "kind": "third-party-license"
+    },
+    {
+      "path": "licenses/System.CodeDom-10.0.2/system.codedom.nuspec",
+      "bytes": 1203,
+      "sha256": "32db6539b57e7f39cb40d84d66ad961c60aad3b7b0453eac3a0c0524e905b5b7",
+      "kind": "third-party-license"
+    },
+    {
+      "path": "licenses/System.Diagnostics.EventLog-10.0.0/THIRD-PARTY-NOTICES.TXT",
+      "bytes": 76623,
+      "sha256": "66f1d4e44973185519bb4aa8a9718eb22fc7af2cc532e3ae9cfc4c127ee7fc54",
+      "kind": "third-party-license"
+    },
+    {
+      "path": "licenses/System.Diagnostics.EventLog-10.0.0/system.diagnostics.eventlog.nuspec",
+      "bytes": 1474,
+      "sha256": "298ac44977dd32b794591dced75176ac396fa44d14bc574e8e823fb383edee63",
+      "kind": "third-party-license"
+    },
+    {
+      "path": "licenses/System.IO.FileSystem.AccessControl-5.0.0/LICENSE.TXT",
+      "bytes": 1116,
+      "sha256": "cfc21f5e8bd655ae997eec916138b707b1d290b83272c02a95c9f821b8c87310",
+      "kind": "third-party-license"
+    },
+    {
+      "path": "licenses/System.IO.FileSystem.AccessControl-5.0.0/THIRD-PARTY-NOTICES.TXT",
+      "bytes": 43395,
+      "sha256": "723c221df67cb638f983d38e01c30a8975a8c184d2351bb874b5b1e05e01d4fc",
+      "kind": "third-party-license"
+    },
+    {
+      "path": "licenses/System.IO.FileSystem.AccessControl-5.0.0/system.io.filesystem.accesscontrol.nuspec",
+      "bytes": 5853,
+      "sha256": "f534cdd6328181658795672fc08033c21d28721aabe89746a1cf0a5bb88b5245",
+      "kind": "third-party-license"
+    },
+    {
+      "path": "licenses/System.IO.Ports-10.0.3/THIRD-PARTY-NOTICES.TXT",
+      "bytes": 76623,
+      "sha256": "66f1d4e44973185519bb4aa8a9718eb22fc7af2cc532e3ae9cfc4c127ee7fc54",
+      "kind": "third-party-license"
+    },
+    {
+      "path": "licenses/System.IO.Ports-10.0.3/system.io.ports.nuspec",
+      "bytes": 1615,
+      "sha256": "455036771f5f1ead0fd70619c20de373653e9aee795d1be9b6fe55d12fac96e5",
+      "kind": "third-party-license"
+    },
+    {
+      "path": "licenses/System.Management-10.0.2/THIRD-PARTY-NOTICES.TXT",
+      "bytes": 76623,
+      "sha256": "66f1d4e44973185519bb4aa8a9718eb22fc7af2cc532e3ae9cfc4c127ee7fc54",
+      "kind": "third-party-license"
+    },
+    {
+      "path": "licenses/System.Management-10.0.2/system.management.nuspec",
+      "bytes": 1875,
+      "sha256": "54f08104c66f758eaa54c1b41050e4d372371978dfbd84873091864a6d9037dc",
+      "kind": "third-party-license"
+    },
+    {
+      "path": "licenses/System.ServiceProcess.ServiceController-10.0.0/THIRD-PARTY-NOTICES.TXT",
+      "bytes": 76623,
+      "sha256": "66f1d4e44973185519bb4aa8a9718eb22fc7af2cc532e3ae9cfc4c127ee7fc54",
+      "kind": "third-party-license"
+    },
+    {
+      "path": "licenses/System.ServiceProcess.ServiceController-10.0.0/system.serviceprocess.servicecontroller.nuspec",
+      "bytes": 2097,
+      "sha256": "90a98c672d639668c880fb46a402ff7dd36c3655a74e82a85803f6aa0a58d372",
+      "kind": "third-party-license"
+    },
+    {
+      "path": "licenses/runtime.android-arm.runtime.native.System.IO.Ports-10.0.3/THIRD-PARTY-NOTICES.TXT",
+      "bytes": 76623,
+      "sha256": "66f1d4e44973185519bb4aa8a9718eb22fc7af2cc532e3ae9cfc4c127ee7fc54",
+      "kind": "third-party-license"
+    },
+    {
+      "path": "licenses/runtime.android-arm.runtime.native.System.IO.Ports-10.0.3/runtime.android-arm.runtime.native.system.io.ports.nuspec",
+      "bytes": 928,
+      "sha256": "8142f2e96ac44b723648dcf2c1d32974e90b366e66fc3abd14f55906a2b29576",
+      "kind": "third-party-license"
+    },
+    {
+      "path": "licenses/runtime.android-arm64.runtime.native.System.IO.Ports-10.0.3/THIRD-PARTY-NOTICES.TXT",
+      "bytes": 76623,
+      "sha256": "66f1d4e44973185519bb4aa8a9718eb22fc7af2cc532e3ae9cfc4c127ee7fc54",
+      "kind": "third-party-license"
+    },
+    {
+      "path": "licenses/runtime.android-arm64.runtime.native.System.IO.Ports-10.0.3/runtime.android-arm64.runtime.native.system.io.ports.nuspec",
+      "bytes": 930,
+      "sha256": "ac59291df9c9879f94e68a804165ffb6bf79eb054f14dd82c3f716ec09a7d8b9",
+      "kind": "third-party-license"
+    },
+    {
+      "path": "licenses/runtime.android-x64.runtime.native.System.IO.Ports-10.0.3/THIRD-PARTY-NOTICES.TXT",
+      "bytes": 76623,
+      "sha256": "66f1d4e44973185519bb4aa8a9718eb22fc7af2cc532e3ae9cfc4c127ee7fc54",
+      "kind": "third-party-license"
+    },
+    {
+      "path": "licenses/runtime.android-x64.runtime.native.System.IO.Ports-10.0.3/runtime.android-x64.runtime.native.system.io.ports.nuspec",
+      "bytes": 928,
+      "sha256": "76777edfbffe59e3194b9862bb6b94bbf3e599651fa61f9a9030f98b0b5e94a1",
+      "kind": "third-party-license"
+    },
+    {
+      "path": "licenses/runtime.android-x86.runtime.native.System.IO.Ports-10.0.3/THIRD-PARTY-NOTICES.TXT",
+      "bytes": 76623,
+      "sha256": "66f1d4e44973185519bb4aa8a9718eb22fc7af2cc532e3ae9cfc4c127ee7fc54",
+      "kind": "third-party-license"
+    },
+    {
+      "path": "licenses/runtime.android-x86.runtime.native.System.IO.Ports-10.0.3/runtime.android-x86.runtime.native.system.io.ports.nuspec",
+      "bytes": 928,
+      "sha256": "bc66acec141528f80c4b82532e05627a447fb22de0a5e0f864e53e8ba2925609",
+      "kind": "third-party-license"
+    },
+    {
+      "path": "licenses/runtime.linux-arm.runtime.native.System.IO.Ports-10.0.3/THIRD-PARTY-NOTICES.TXT",
+      "bytes": 76623,
+      "sha256": "66f1d4e44973185519bb4aa8a9718eb22fc7af2cc532e3ae9cfc4c127ee7fc54",
+      "kind": "third-party-license"
+    },
+    {
+      "path": "licenses/runtime.linux-arm.runtime.native.System.IO.Ports-10.0.3/runtime.linux-arm.runtime.native.system.io.ports.nuspec",
+      "bytes": 926,
+      "sha256": "35dac58ecc2e286a493e12c7d34edaf4b101ef0818fec73f23af62715562bf85",
+      "kind": "third-party-license"
+    },
+    {
+      "path": "licenses/runtime.linux-arm64.runtime.native.System.IO.Ports-10.0.3/THIRD-PARTY-NOTICES.TXT",
+      "bytes": 76623,
+      "sha256": "66f1d4e44973185519bb4aa8a9718eb22fc7af2cc532e3ae9cfc4c127ee7fc54",
+      "kind": "third-party-license"
+    },
+    {
+      "path": "licenses/runtime.linux-arm64.runtime.native.System.IO.Ports-10.0.3/runtime.linux-arm64.runtime.native.system.io.ports.nuspec",
+      "bytes": 928,
+      "sha256": "c086ec387b05f020ee80382f6aa53368251bd7d3fb9ee0752adeffaf7b6dfbc0",
+      "kind": "third-party-license"
+    },
+    {
+      "path": "licenses/runtime.linux-bionic-arm64.runtime.native.System.IO.Ports-10.0.3/THIRD-PARTY-NOTICES.TXT",
+      "bytes": 76623,
+      "sha256": "66f1d4e44973185519bb4aa8a9718eb22fc7af2cc532e3ae9cfc4c127ee7fc54",
+      "kind": "third-party-license"
+    },
+    {
+      "path": "licenses/runtime.linux-bionic-arm64.runtime.native.System.IO.Ports-10.0.3/runtime.linux-bionic-arm64.runtime.native.system.io.ports.nuspec",
+      "bytes": 935,
+      "sha256": "e059e197497e12aabcb40825a747ba2f12aab87c10fa891e2f1ce84672b5a791",
+      "kind": "third-party-license"
+    },
+    {
+      "path": "licenses/runtime.linux-bionic-x64.runtime.native.System.IO.Ports-10.0.3/THIRD-PARTY-NOTICES.TXT",
+      "bytes": 76623,
+      "sha256": "66f1d4e44973185519bb4aa8a9718eb22fc7af2cc532e3ae9cfc4c127ee7fc54",
+      "kind": "third-party-license"
+    },
+    {
+      "path": "licenses/runtime.linux-bionic-x64.runtime.native.System.IO.Ports-10.0.3/runtime.linux-bionic-x64.runtime.native.system.io.ports.nuspec",
+      "bytes": 933,
+      "sha256": "b53b4f67e27021b63d7d3f5ee4ed61f2937b17ad59a25722609666779f8a6bca",
+      "kind": "third-party-license"
+    },
+    {
+      "path": "licenses/runtime.linux-musl-arm.runtime.native.System.IO.Ports-10.0.3/THIRD-PARTY-NOTICES.TXT",
+      "bytes": 76623,
+      "sha256": "66f1d4e44973185519bb4aa8a9718eb22fc7af2cc532e3ae9cfc4c127ee7fc54",
+      "kind": "third-party-license"
+    },
+    {
+      "path": "licenses/runtime.linux-musl-arm.runtime.native.System.IO.Ports-10.0.3/runtime.linux-musl-arm.runtime.native.system.io.ports.nuspec",
+      "bytes": 931,
+      "sha256": "371a58b5088aaa4d5729709cc43dcadbabb8a9ca95577d1b4b8c8984584a52a7",
+      "kind": "third-party-license"
+    },
+    {
+      "path": "licenses/runtime.linux-musl-arm64.runtime.native.System.IO.Ports-10.0.3/THIRD-PARTY-NOTICES.TXT",
+      "bytes": 76623,
+      "sha256": "66f1d4e44973185519bb4aa8a9718eb22fc7af2cc532e3ae9cfc4c127ee7fc54",
+      "kind": "third-party-license"
+    },
+    {
+      "path": "licenses/runtime.linux-musl-arm64.runtime.native.System.IO.Ports-10.0.3/runtime.linux-musl-arm64.runtime.native.system.io.ports.nuspec",
+      "bytes": 933,
+      "sha256": "503411544c2e0d2ef05316e6b38d56fb537ff5da4e4ae7d17f327aee10553839",
+      "kind": "third-party-license"
+    },
+    {
+      "path": "licenses/runtime.linux-musl-x64.runtime.native.System.IO.Ports-10.0.3/THIRD-PARTY-NOTICES.TXT",
+      "bytes": 76623,
+      "sha256": "66f1d4e44973185519bb4aa8a9718eb22fc7af2cc532e3ae9cfc4c127ee7fc54",
+      "kind": "third-party-license"
+    },
+    {
+      "path": "licenses/runtime.linux-musl-x64.runtime.native.System.IO.Ports-10.0.3/runtime.linux-musl-x64.runtime.native.system.io.ports.nuspec",
+      "bytes": 931,
+      "sha256": "6517e4a6bd63c7109997f4bfd62a90b27465bfc01fe8a44eab56cd3b1a5a916b",
+      "kind": "third-party-license"
+    },
+    {
+      "path": "licenses/runtime.linux-x64.runtime.native.System.IO.Ports-10.0.3/THIRD-PARTY-NOTICES.TXT",
+      "bytes": 76623,
+      "sha256": "66f1d4e44973185519bb4aa8a9718eb22fc7af2cc532e3ae9cfc4c127ee7fc54",
+      "kind": "third-party-license"
+    },
+    {
+      "path": "licenses/runtime.linux-x64.runtime.native.System.IO.Ports-10.0.3/runtime.linux-x64.runtime.native.system.io.ports.nuspec",
+      "bytes": 926,
+      "sha256": "640506da31494d4402cc4a73554b2fcaf8ceff250d04be8373c05deb66af88a1",
+      "kind": "third-party-license"
+    },
+    {
+      "path": "licenses/runtime.maccatalyst-arm64.runtime.native.System.IO.Ports-10.0.3/THIRD-PARTY-NOTICES.TXT",
+      "bytes": 76623,
+      "sha256": "66f1d4e44973185519bb4aa8a9718eb22fc7af2cc532e3ae9cfc4c127ee7fc54",
+      "kind": "third-party-license"
+    },
+    {
+      "path": "licenses/runtime.maccatalyst-arm64.runtime.native.System.IO.Ports-10.0.3/runtime.maccatalyst-arm64.runtime.native.system.io.ports.nuspec",
+      "bytes": 934,
+      "sha256": "283927c5e451695a7c0f2809214eddff7f595d315bb532163193262a57daea2e",
+      "kind": "third-party-license"
+    },
+    {
+      "path": "licenses/runtime.maccatalyst-x64.runtime.native.System.IO.Ports-10.0.3/THIRD-PARTY-NOTICES.TXT",
+      "bytes": 76623,
+      "sha256": "66f1d4e44973185519bb4aa8a9718eb22fc7af2cc532e3ae9cfc4c127ee7fc54",
+      "kind": "third-party-license"
+    },
+    {
+      "path": "licenses/runtime.maccatalyst-x64.runtime.native.System.IO.Ports-10.0.3/runtime.maccatalyst-x64.runtime.native.system.io.ports.nuspec",
+      "bytes": 932,
+      "sha256": "97fcf0deb71c21caed4e42c1465c65f75240a824274f3175fb3ba93e87a459ab",
+      "kind": "third-party-license"
+    },
+    {
+      "path": "licenses/runtime.native.System.IO.Ports-10.0.3/THIRD-PARTY-NOTICES.TXT",
+      "bytes": 76623,
+      "sha256": "66f1d4e44973185519bb4aa8a9718eb22fc7af2cc532e3ae9cfc4c127ee7fc54",
+      "kind": "third-party-license"
+    },
+    {
+      "path": "licenses/runtime.native.System.IO.Ports-10.0.3/runtime.native.system.io.ports.nuspec",
+      "bytes": 2987,
+      "sha256": "579d4626e03cb2079420dbbaa0f54933da3582d5142b3daa702b663cc009ab44",
+      "kind": "third-party-license"
+    },
+    {
+      "path": "licenses/runtime.osx-arm64.runtime.native.System.IO.Ports-10.0.3/THIRD-PARTY-NOTICES.TXT",
+      "bytes": 76623,
+      "sha256": "66f1d4e44973185519bb4aa8a9718eb22fc7af2cc532e3ae9cfc4c127ee7fc54",
+      "kind": "third-party-license"
+    },
+    {
+      "path": "licenses/runtime.osx-arm64.runtime.native.System.IO.Ports-10.0.3/runtime.osx-arm64.runtime.native.system.io.ports.nuspec",
+      "bytes": 926,
+      "sha256": "d070936f00ca716037128b5f34f5e72862f5a3e5b4614b711d1746d49b1d9a36",
+      "kind": "third-party-license"
+    },
+    {
+      "path": "licenses/runtime.osx-x64.runtime.native.System.IO.Ports-10.0.3/THIRD-PARTY-NOTICES.TXT",
+      "bytes": 76623,
+      "sha256": "66f1d4e44973185519bb4aa8a9718eb22fc7af2cc532e3ae9cfc4c127ee7fc54",
+      "kind": "third-party-license"
+    },
+    {
+      "path": "licenses/runtime.osx-x64.runtime.native.System.IO.Ports-10.0.3/runtime.osx-x64.runtime.native.system.io.ports.nuspec",
+      "bytes": 924,
+      "sha256": "ef3e59e81174649f41690332e75776afaae0272101dbcdcf961e69348b105caf",
+      "kind": "third-party-license"
+    },
+    {
+      "path": "scripts/audit-public.py",
+      "bytes": 7379,
+      "sha256": "22456bbf2317acf0a89b12cc7fbc16c827d27e511d453c3ac3cd09094c7f38ec",
+      "kind": "documentation-or-config"
+    },
+    {
+      "path": "scripts/build-source.ps1",
+      "bytes": 960,
+      "sha256": "e1e6299b46e07ae327f7cbf32bb72878a7e6faee22db4d4702ed8261ad122873",
+      "kind": "documentation-or-config"
+    },
+    {
+      "path": "scripts/test-audit.py",
+      "bytes": 1746,
+      "sha256": "47cb705a7ebb5be5611ea9c0c386a53fc5bbfdbd6f42378e19c5d16cde903939",
+      "kind": "documentation-or-config"
+    },
+    {
+      "path": "src/QuietPC.App/App.xaml",
+      "bytes": 10384,
+      "sha256": "b0f805960a3acab4ad008216c6f91a6bbb9a5d5ac9e525f1e12fa63904055d4f",
+      "kind": "source"
+    },
+    {
+      "path": "src/QuietPC.App/App.xaml.cs",
+      "bytes": 990,
+      "sha256": "4b4f5f2ff214e16734fb7b923594537aef2862a328d6b237e52403bc85b2baa0",
+      "kind": "source"
+    },
+    {
+      "path": "src/QuietPC.App/AssemblyAccess.cs",
+      "bytes": 83,
+      "sha256": "e7c6f6b6e49cf4ffca837403684570ffdd448f04ed22609abfd2563e386944b7",
+      "kind": "source"
+    },
+    {
+      "path": "src/QuietPC.App/Assets/vsp.ico",
+      "bytes": 43055,
+      "sha256": "315e7aee37fed486f0ce25916a89862fd3eef50c1f95fcfe5d0a87327b9dd831",
+      "kind": "asset"
+    },
+    {
+      "path": "src/QuietPC.App/Assets/vsp.png",
+      "bytes": 19416,
+      "sha256": "d0ba0a6ecb3d1971b6e3abf6a8a5f9c3de46682b88cd6b41c0e1d1686d72c44c",
+      "kind": "asset"
+    },
+    {
+      "path": "src/QuietPC.App/Assets/vsp.svg",
+      "bytes": 379,
+      "sha256": "d1ff9f7cf30ceb82333c8605a9bec8b779786f19b69678cb7157efc95cbcbfc6",
+      "kind": "asset"
+    },
+    {
+      "path": "src/QuietPC.App/BackgroundOptimizer.cs",
+      "bytes": 3159,
+      "sha256": "46922124dcc450299b1e3626634671684da895711ebfa0ffd824bd937bdb4c8e",
+      "kind": "source"
+    },
+    {
+      "path": "src/QuietPC.App/Client.cs",
+      "bytes": 3820,
+      "sha256": "6f9b8d7a78481c18da6254ea0974733236ab0e94bcbec82903c889e02548afc2",
+      "kind": "source"
+    },
+    {
+      "path": "src/QuietPC.App/CompetitivePanel.cs",
+      "bytes": 4392,
+      "sha256": "8477da9e81bd0a8046919dd8868badf85409450cff514aa79a30fc80793b8e89",
+      "kind": "source"
+    },
+    {
+      "path": "src/QuietPC.App/CpuClockSampler.cs",
+      "bytes": 2053,
+      "sha256": "4add2f8864462dafdf9d69e48bc825ab42b6839fbae6291000781c3f3cd0eb2d",
+      "kind": "source"
+    },
+    {
+      "path": "src/QuietPC.App/EnergyPanel.cs",
+      "bytes": 6945,
+      "sha256": "090d9c568868e9e000ab91e33677bff59d3b4a46fd9020ddff29ed78c123041b",
+      "kind": "source"
+    },
+    {
+      "path": "src/QuietPC.App/Features.cs",
+      "bytes": 16510,
+      "sha256": "711ca49d3db3e89557729378b41c6f152300ef95d4c0cde9e935da909c7b6622",
+      "kind": "source"
+    },
+    {
+      "path": "src/QuietPC.App/FrameCapture.cs",
+      "bytes": 4666,
+      "sha256": "2cf8dfae8fd5466b3edb322776ceefdc2c3f3afb53ef4f60074e9f200e012d05",
+      "kind": "source"
+    },
+    {
+      "path": "src/QuietPC.App/GameBoostPanel.cs",
+      "bytes": 2814,
+      "sha256": "5166212c31327839941153defa632de64a73ad62bcd69a2603373a2d39356c4f",
+      "kind": "source"
+    },
+    {
+      "path": "src/QuietPC.App/GameDetector.cs",
+      "bytes": 4118,
+      "sha256": "452d7ba34959afbdbdc778579f8d114032275c3435a9da93ba287f41550f2ba0",
+      "kind": "source"
+    },
+    {
+      "path": "src/QuietPC.App/GamingAudit.cs",
+      "bytes": 4782,
+      "sha256": "5a0052d847e506901bed9ec5e5f052e28d32cc17583b9399e31b2104d9bf19e0",
+      "kind": "source"
+    },
+    {
+      "path": "src/QuietPC.App/GlobalUsings.cs",
+      "bytes": 156,
+      "sha256": "a71f08ad4422352440d631f8c6bb27e9cabfae56236d9a5d35eb92c5208aa10c",
+      "kind": "source"
+    },
+    {
+      "path": "src/QuietPC.App/HardwareCapabilities.cs",
+      "bytes": 3735,
+      "sha256": "092c4993cd6c456acbd7e005a83044f4972054f76c93b16f908b3d7296243334",
+      "kind": "source"
+    },
+    {
+      "path": "src/QuietPC.App/History.cs",
+      "bytes": 861,
+      "sha256": "25aa0846abe81966c656349f3654e0928cd0d6650cbacd46194756a3eee2d244",
+      "kind": "source"
+    },
+    {
+      "path": "src/QuietPC.App/LiveFrameSession.cs",
+      "bytes": 8996,
+      "sha256": "b5184203b591960894db484c9b781ec33aa97b1002faefee21f474ccd05fc3f0",
+      "kind": "source"
+    },
+    {
+      "path": "src/QuietPC.App/MainWindow.xaml",
+      "bytes": 6799,
+      "sha256": "5d1c4c65ccd5971ae7e1e9a78782010dbe22d1549aca3c2526d9a63a3b9977d4",
+      "kind": "source"
+    },
+    {
+      "path": "src/QuietPC.App/MainWindow.xaml.cs",
+      "bytes": 16554,
+      "sha256": "3e602f17718121ce31ec11efc46f338764d8953e241e826a2b8b3d6f52343789",
+      "kind": "source"
+    },
+    {
+      "path": "src/QuietPC.App/MetricChart.cs",
+      "bytes": 1704,
+      "sha256": "09b4e2c075af8ed4bfb83626671bd2cbe518c3f26f25c86e63278975bcd65962",
+      "kind": "source"
+    },
+    {
+      "path": "src/QuietPC.App/MonitoringWindow.Live.cs",
+      "bytes": 9860,
+      "sha256": "e0c37cdae261d201cbe9dd5c4919df16f55b12024eaec08e9a93f6ca43b4e5e4",
+      "kind": "source"
+    },
+    {
+      "path": "src/QuietPC.App/MonitoringWindow.cs",
+      "bytes": 12000,
+      "sha256": "5d37dc49aff6213dc5082140a39dd883f7e887974cea6a69ae6eeda798c7d0d4",
+      "kind": "source"
+    },
+    {
+      "path": "src/QuietPC.App/NetworkProbe.cs",
+      "bytes": 1768,
+      "sha256": "4ce56f6d2280c69577612e80763737a1df042cda2926d9f51fa4263aaf1668a3",
+      "kind": "source"
+    },
+    {
+      "path": "src/QuietPC.App/PortableMode.cs",
+      "bytes": 2179,
+      "sha256": "75b1ef3d784e21f6e366ce77b4ca667c4c8cdb380858b2c59d9d7af2ec8ef240",
+      "kind": "source"
+    },
+    {
+      "path": "src/QuietPC.App/PowerCheck.cs",
+      "bytes": 2051,
+      "sha256": "c64d67dd0023362b23c2fef1f092a99e5f90a7f8137731385738a9979f706e98",
+      "kind": "source"
+    },
+    {
+      "path": "src/QuietPC.App/ProfileEditor.cs",
+      "bytes": 5382,
+      "sha256": "8f678c9e773d785fab5c5e1cd3993c2222f2438e33a4ee7d094d7df5e86db474",
+      "kind": "source"
+    },
+    {
+      "path": "src/QuietPC.App/QuietPC.App.csproj",
+      "bytes": 834,
+      "sha256": "706ac180787676cc60e3388fc99c3f100fed8683eba8ee4fb3e416bbc67979d2",
+      "kind": "source"
+    },
+    {
+      "path": "src/QuietPC.App/SensorProcess.cs",
+      "bytes": 3590,
+      "sha256": "f8cc2fc17984f1958283eb0033de0d556889034be7728fa4a8eda1a9ef39a251",
+      "kind": "source"
+    },
+    {
+      "path": "src/QuietPC.App/SteamGames.cs",
+      "bytes": 5664,
+      "sha256": "b8488b48feb10cd6e60ec5f0aad6976559d601ace293d7674d2619e4f7428764",
+      "kind": "source"
+    },
+    {
+      "path": "src/QuietPC.App/SystemTelemetry.cs",
+      "bytes": 7573,
+      "sha256": "0c1e2f21d8488778272a926a4fc4f791968baa21c11c3561e55e79e7a6e3ba8c",
+      "kind": "source"
+    },
+    {
+      "path": "src/QuietPC.App/Theme.cs",
+      "bytes": 3568,
+      "sha256": "fb17d82624f824b699177293245d695dca9daafa37b71009066c30d5e9138fec",
+      "kind": "source"
+    },
+    {
+      "path": "src/QuietPC.App/TuningPanel.cs",
+      "bytes": 14488,
+      "sha256": "ca593f3341fe39411b35782635d2da9ed21c12ea432e0f64aa0c17d2061e796a",
+      "kind": "source"
+    },
+    {
+      "path": "src/QuietPC.App/app.manifest",
+      "bytes": 531,
+      "sha256": "d4aaaf93ac07cf2777c9eda1aaec26f11315fa50e10d3af9f5537f2f417806b2",
+      "kind": "source"
+    },
+    {
+      "path": "src/QuietPC.Core/Calibration.cs",
+      "bytes": 5552,
+      "sha256": "13a669ddf1fcbb60e340a35f1ad79a592cb2724eb6f88674b43f9a32ca178857",
+      "kind": "source"
+    },
+    {
+      "path": "src/QuietPC.Core/FpsRecovery.cs",
+      "bytes": 3482,
+      "sha256": "9f92455625e2929c54de728129dc4bf849f13b751fc72be5581bf21a640c47cc",
+      "kind": "source"
+    },
+    {
+      "path": "src/QuietPC.Core/GameBoost.cs",
+      "bytes": 3669,
+      "sha256": "c085119f1cb669d64363f123bb4e122ec9ceb136ad63f2f00a702eff4da573cf",
+      "kind": "source"
+    },
+    {
+      "path": "src/QuietPC.Core/GpuEnergy.cs",
+      "bytes": 1140,
+      "sha256": "e56c4980169da47e893c09dc0fdb2ca1a2c77a5c686556d2e833fd6133296766",
+      "kind": "source"
+    },
+    {
+      "path": "src/QuietPC.Core/GpuRecovery.cs",
+      "bytes": 2700,
+      "sha256": "640cc5857a1a0f4bcd651855bdd01b5252ad689bc9269fcbad8a0533a08c3edb",
+      "kind": "source"
+    },
+    {
+      "path": "src/QuietPC.Core/LiveMetrics.cs",
+      "bytes": 5914,
+      "sha256": "fe0ae0a4d00db46ef17fa78c48ce2656079624af340d9aa516e78b41ade2feb7",
+      "kind": "source"
+    },
+    {
+      "path": "src/QuietPC.Core/MemoryLevel.cs",
+      "bytes": 668,
+      "sha256": "dc1090b61079318ab12795141713bb08679e24064e7ca846a42cb7d44e30bb56",
+      "kind": "source"
+    },
+    {
+      "path": "src/QuietPC.Core/MemorySchedule.cs",
+      "bytes": 1053,
+      "sha256": "798992d6657de48e031dbfa2f1d265416dec5c096b97e808a0ac0ca7c5851ced",
+      "kind": "source"
+    },
+    {
+      "path": "src/QuietPC.Core/Models.cs",
+      "bytes": 10074,
+      "sha256": "8b117c49e39a4c465f683938a18fc22b6134295a7e4d211832d851f20bdbdcfd",
+      "kind": "source"
+    },
+    {
+      "path": "src/QuietPC.Core/QuietPC.Core.csproj",
+      "bytes": 35,
+      "sha256": "3e1a9f612f8cfcc2e2a8b2ef085685f9f3d1a55c4b901e8d88af6ec37d283195",
+      "kind": "source"
+    },
+    {
+      "path": "src/QuietPC.Core/SteamLibrary.cs",
+      "bytes": 5916,
+      "sha256": "d2ad5b0a95d8e6963cd06200c11b951f0412f9bf62821339846403941d4c21e0",
+      "kind": "source"
+    },
+    {
+      "path": "src/QuietPC.Launcher/Program.cs",
+      "bytes": 685,
+      "sha256": "9b8b971139f31d367390b22b0803180a1606f11da9683f4e7b77d0984b77b1d4",
+      "kind": "source"
+    },
+    {
+      "path": "src/QuietPC.Launcher/QuietPC.Launcher.csproj",
+      "bytes": 276,
+      "sha256": "76e5c85b147433fe83a3c04cc8660ad0a727c1ac946f721991700c058ee2c776",
+      "kind": "source"
+    },
+    {
+      "path": "src/QuietPC.Monitor/Program.cs",
+      "bytes": 4378,
+      "sha256": "98a580b7b306b2587fc57afb45aa6c1bc639499da55e10f3dd4ef41bd9fac344",
+      "kind": "source"
+    },
+    {
+      "path": "src/QuietPC.Monitor/QuietPC.Monitor.csproj",
+      "bytes": 309,
+      "sha256": "7c353e47459680bcb3ef622a5f08aeee88eb8aafc886413799a98a4ea815236e",
+      "kind": "source"
+    },
+    {
+      "path": "src/QuietPC.Service/PortableHost.cs",
+      "bytes": 4168,
+      "sha256": "b7ee4654833f039fa29c0bfca0eb62c77f14c4c1872fa262b96edfad488b1477",
+      "kind": "source"
+    },
+    {
+      "path": "src/QuietPC.Service/Program.cs",
+      "bytes": 8707,
+      "sha256": "1896689d8482ce2dfd43941ff8c4d9ef086bbabce10f710595da6cbc94c318b5",
+      "kind": "source"
+    },
+    {
+      "path": "src/QuietPC.Service/QuietPC.Service.csproj",
+      "bytes": 424,
+      "sha256": "b5d9bc2d319dba9d2c177a2efe746d3c9a24e0d9cd5cdeb27ef4b0db037af7a2",
+      "kind": "source"
+    },
+    {
+      "path": "src/QuietPC.Windows/MemoryCleaner.cs",
+      "bytes": 2254,
+      "sha256": "8a82d03e9faafa9b5b9b81408e192d09fb5fe6c6a42fee6aab98e18ff55614ef",
+      "kind": "source"
+    },
+    {
+      "path": "src/QuietPC.Windows/NvidiaDrs.cs",
+      "bytes": 4897,
+      "sha256": "faf45a877df51dea04c0ba6e4abcf7d7e692e3009663f83ebe70a57dbed499cf",
+      "kind": "source"
+    },
+    {
+      "path": "src/QuietPC.Windows/NvidiaPower.cs",
+      "bytes": 2744,
+      "sha256": "a84314f4b9ea7f4f0f66e2f4870ce86ec22a5fd12f1894befb99b8c8e7c6b689",
+      "kind": "source"
+    },
+    {
+      "path": "src/QuietPC.Windows/ProcessPriority.cs",
+      "bytes": 2008,
+      "sha256": "a8fbcc1f955317fc56ba9cfdd246c7e430422994c3d45d2d286999c804f9f039",
+      "kind": "source"
+    },
+    {
+      "path": "src/QuietPC.Windows/QuietPC.Windows.csproj",
+      "bytes": 213,
+      "sha256": "e95bcb1211c7dd0f0937c2959394873486af670a5d447647166c6d5c32ad2a83",
+      "kind": "source"
+    },
+    {
+      "path": "src/QuietPC.Windows/Sensors.cs",
+      "bytes": 1879,
+      "sha256": "9d8eaf52c22e18d57eeb72605866df163aab69dbadc97df2ded00f4998a1419a",
+      "kind": "source"
+    },
+    {
+      "path": "src/QuietPC.Windows/WindowsPower.cs",
+      "bytes": 5047,
+      "sha256": "58f92a709954d9a976f268d418e63e65846952796144ba7f201aae51a350dc27",
+      "kind": "source"
+    },
+    {
+      "path": "tests/QuietPC.App.Tests/Program.cs",
+      "bytes": 1025,
+      "sha256": "e963bf45acdec2061cef8759ef9965576a2f115f1a4a094429ccb3aa505ad89b",
+      "kind": "source"
+    },
+    {
+      "path": "tests/QuietPC.App.Tests/QuietPC.App.Tests.csproj",
+      "bytes": 292,
+      "sha256": "587cc7a4aef51424e455607d1eee2b9178a729bdef83f536d7d66dfd3dc06695",
+      "kind": "source"
+    },
+    {
+      "path": "tests/QuietPC.Tests/Program.cs",
+      "bytes": 32097,
+      "sha256": "d8522f2b7ac04d04fe4df3e76755da7b656a233e9bb6c3238b1fde9abccf1365",
+      "kind": "source"
+    },
+    {
+      "path": "tests/QuietPC.Tests/QuietPC.Tests.csproj",
+      "bytes": 197,
+      "sha256": "82023ddc2d9150a8512a1312b627b64bc5505de94f879b8cc1f6eae20e49eefc",
+      "kind": "source"
+    }
+  ],
+  "excludes": [
+    "audit/INVENTORY.json (self)",
+    "Git database (audited separately)"
+  ],
+  "filesCount": 170
+}
