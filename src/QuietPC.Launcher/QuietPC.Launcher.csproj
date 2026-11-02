@@ -1,0 +1,1 @@
+<Project Sdk="Microsoft.NET.Sdk"><PropertyGroup><OutputType>WinExe</OutputType><TargetFramework>net10.0-windows</TargetFramework><AssemblyName>VSP</AssemblyName><Version>0.8.0</Version><ApplicationIcon>../QuietPC.App/Assets/vsp.ico</ApplicationIcon></PropertyGroup></Project>
