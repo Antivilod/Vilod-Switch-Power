@@ -16,7 +16,7 @@ public sealed class WindowsPower:IPower {
    Check(PowerWriteACValueIndex(0,ref id,ref Cpu,ref Minimum,Math.Min(5u,minimumAc)));Check(PowerWriteDCValueIndex(0,ref id,ref Cpu,ref Minimum,Math.Min(5u,minimumDc)));
    if(epp==0){Check(PowerWriteACValueIndex(0,ref id,ref Cpu,ref Boost,2));Check(PowerWriteDCValueIndex(0,ref id,ref Cpu,ref Boost,2));}
    if(epp>=80){Check(PowerWriteACValueIndex(0,ref id,ref Cpu,ref Boost,0));Check(PowerWriteDCValueIndex(0,ref id,ref Cpu,ref Boost,0));}
-   var label=System.Text.Encoding.Unicode.GetBytes("VSP — "+(epp==0?"Game Boost":epp>=80?"Работа":"Игра")+"\0");Check(PowerWriteFriendlyName(0,ref id,0,0,label,(uint)label.Length));
+   var label=System.Text.Encoding.Unicode.GetBytes("VSP - "+(epp==0?"Game Boost":epp>=80?"Работа":"Игра")+"\0");Check(PowerWriteFriendlyName(0,ref id,0,0,label,(uint)label.Length));
    var result=Read(id);if(result.Ac!=epp||result.Dc!=epp)throw new IOException("EPP не подтверждён");return result;
   }
   catch{PowerDeleteScheme(0,ref id);throw;}

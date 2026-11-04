@@ -1,0 +1,79 @@
+name: Publish verified VSP 0.8.1
+on:
+  push:
+    branches: [release/v0.8.1]
+    paths: [.github/workflows/publish-0.8.1.yml]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: vsp-release-0.8.1
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      actions: read
+      contents: write
+    env:
+      GH_TOKEN: ${{ github.token }}
+      GH_REPO: ${{ github.repository }}
+    steps:
+      - name: Verify successful source run and download its exact artifact
+        run: |
+          set -euo pipefail
+          gh api repos/$GH_REPO/actions/runs/41817199582 > run.json
+          python - <<'PYCODE'
+          import json
+          r=json.load(open('run.json'))
+          assert r['conclusion']=='success'
+          assert r['head_sha']=='48cf73acc374497dd4407870bcfa460df6bd3ddf'
+          assert r['repository']['full_name']=='Antivilod/Vilod-Switch-Power'
+          PYCODE
+          gh run download 41817199582 --name VSP-0.8.1-windows-x64-candidate --dir verified
+      - name: Verify installer checksum and completed Windows checks
+        working-directory: verified
+        run: |
+          set -euo pipefail
+          sha256sum --check SHA256SUMS.txt
+          python - <<'PYCODE'
+          import json
+          from pathlib import Path
+          expected={'VSP-0.8.1-Setup-x64.exe','SHA256SUMS.txt','WINDOWS-VERIFICATION.json'}
+          assert {p.name for p in Path('.').iterdir()}==expected
+          r=json.load(open('WINDOWS-VERIFICATION.json',encoding='utf-8-sig'))
+          assert r['version']=='0.8.1'
+          for key in ('install','service','power_restore','service_crash_restore','ui_initialization','uninstall'):
+              assert r[key] is True, key
+          assert r['gpu_hardware_tested'] is False
+          print(json.dumps(r,indent=2))
+          PYCODE
+      - name: Publish tested installer with its evidence
+        run: |
+          set -euo pipefail
+          cat > notes.md <<'NOTES'
+          ## Vilod Switch Power 0.8.1
+
+          Windows x64 installer with bundled .NET runtime, Start menu shortcut, service setup and standard uninstallation. The logo and existing profile features are preserved.
+
+          Download **VSP-0.8.1-Setup-x64.exe** below. Compare its SHA-256 with **SHA256SUMS.txt** before running it. Administrator rights are required for installation. Launch Vilod Switch Power from Start, select a profile, then enable control explicitly.
+
+          ### Changes from public 0.8.0
+          - An installable distribution instead of source-only delivery.
+          - Local installation determines the controlling Windows account; no developer account or private configuration is shipped.
+          - Separate public settings directory, safe first-run defaults and control disabled until enabled by the user.
+          - Protected recovery state, restricted service commands, recovery after service failure, and restoration before removal.
+          - Build instructions, installation instructions and included dependency/runtime license notices. Own code remains MIT.
+
+          ### Verified
+          [Windows CI run](https://github.com/Antivilod/Vilod-Switch-Power/actions/runs/41817199582) built the installer and passed installation, service IPC, Windows power-profile apply/restore, service-crash restoration, WPF window initialization and uninstallation. The downloadable WINDOWS-VERIFICATION.json records the results. 103 core tests also passed.
+
+          ### Scope
+          This is a pre-release for physical-device testing. CI used Windows Server 2025, not the owner's laptop. NVIDIA hardware, actual game FPS and every supported Windows/device combination were not tested. The installer is unsigned; do not disable Windows protections to install it. No signing certificate, keys, personal settings or logs are included.
+
+          Existing QuietPC/VSP service or installation is not overwritten. Restore settings and use the old version's normal uninstaller first. A custom/private local version may have additional features; those were not copied into this public package.
+
+          Build source: 48cf73acc374497dd4407870bcfa460df6bd3ddf. App/Monitor: 0.8.1. Service: 0.4.2.
+          NOTES
+          gh release create v0.8.1 verified/VSP-0.8.1-Setup-x64.exe verified/SHA256SUMS.txt verified/WINDOWS-VERIFICATION.json --target 48cf73acc374497dd4407870bcfa460df6bd3ddf --title 'Vilod Switch Power 0.8.1 - Windows installer' --notes-file notes.md --prerelease

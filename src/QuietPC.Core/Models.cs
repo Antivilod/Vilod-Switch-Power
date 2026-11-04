@@ -7,7 +7,7 @@ public sealed record Profile(string Id, string Name, int? Fps, uint Epp, string 
 }
 public sealed class Preferences {
  public int Schema {get;set;}=1;
- public string Selected {get;set;}="120";
+ public string Selected {get;set;}="work";
  public bool DiscoverSteamGames {get;set;}=true;
  public List<SteamPreset> SteamPresets {get;set;}=[];
  public string DefaultGameProfile {get;set;}="120";
@@ -20,12 +20,12 @@ public sealed class Preferences {
  public List<Profile> Profiles {get;set;}=[..Profile.Defaults];
  public int EnsureBuiltIns(){int count=0;foreach(var id in new[]{"boost","400","competitive"})if(Profiles.Count<50&&!Profiles.Any(p=>p.Id==id)){Profiles.Add(Profile.Defaults.Single(p=>p.Id==id));count++;}return count;}
  public List<string> Games {get;set;}=[];
- public bool Automatic {get;set;}=true;
+ public bool Automatic {get;set;}
  public bool LightTheme {get;set;}
  public bool GlobalFps {get;set;}=true;
  public bool ResumeOnLaunch {get;set;}
  public bool WasEnabled {get;set;}
- public bool AutoClean {get;set;}=true;
+ public bool AutoClean {get;set;}
  public string MemoryTrigger {get;set;}="Either";
  public bool PauseCleanInGames {get;set;}=true;
  public int? MemoryWarningThreshold {get;set;}
