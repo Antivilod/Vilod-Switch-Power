@@ -10,9 +10,9 @@ public partial class App:System.Windows.Application {
   if(e.Args.Length==2&&e.Args[0]=="--vsp-install-smoke"){
    var timer=new System.Windows.Threading.DispatcherTimer{Interval=TimeSpan.FromSeconds(5)};
    timer.Tick+=(_,_)=>{timer.Stop();bool ok=window.IsLoaded&&window.IsVisible&&
-    (window.FindName("VersionLabel") as System.Windows.Controls.TextBlock)?.Text.Contains("0.8.1")==true&&
+    (window.FindName("VersionLabel") as System.Windows.Controls.TextBlock)?.Text.Contains("0.8.2")==true&&
     (window.FindName("Profiles") as System.Windows.Controls.ComboBox)?.Items.Count>=4;
-    try{System.IO.File.WriteAllText(e.Args[1],System.Text.Json.JsonSerializer.Serialize(new{ui_initialized=ok,version="0.8.1"}));Shutdown(ok?0:1);}catch{Shutdown(1);}};
+    try{System.IO.File.WriteAllText(e.Args[1],System.Text.Json.JsonSerializer.Serialize(new{ui_initialized=ok,version="0.8.2"}));Shutdown(ok?0:1);}catch{Shutdown(1);}};
    timer.Start();
   }
  }
