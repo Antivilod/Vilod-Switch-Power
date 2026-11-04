@@ -1,0 +1,42 @@
+name: Windows installer 0.8.1
+on:
+  push:
+    branches: [release/v0.8.1, release/v0.8.1-complete]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: vsp-installer-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  build-test:
+    runs-on: windows-2025
+    timeout-minutes: 25
+    defaults:
+      run:
+        shell: pwsh
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-dotnet@26b0ec14cb23fa6904739307f278c14f94c95bf1 # v5
+        with:
+          dotnet-version: '10.0.x'
+      - name: Audit tracked source snapshot
+        run: |
+          python scripts/check-source-snapshot.py
+          python scripts/test-audit.py
+      - name: Build and run core tests, publish components, compile installer
+        run: ./scripts/build-installer.ps1
+      - name: Install, verify service and power restoration, initialize UI, uninstall
+        run: ./scripts/test-installer.ps1
+      - name: Upload verified candidate
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: VSP-0.8.1-windows-x64-candidate
+          path: |
+            artifacts/release/VSP-0.8.1-Setup-x64.exe
+            artifacts/release/SHA256SUMS.txt
+            artifacts/release/WINDOWS-VERIFICATION.json
+          if-no-files-found: error
+          retention-days: 14
