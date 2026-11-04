@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "version": "0.8.0",
+  "version": "0.8.1",
   "files": [
     {
       "path": ".gitattributes",
@@ -9,9 +9,21 @@
       "kind": "documentation-or-config"
     },
     {
+      "path": ".github/workflows/windows-installer.yml",
+      "bytes": 1435,
+      "sha256": "21fe0a3f66d25a556dcda5b4669e80c12431a03cf1ca34c635afebdb6b994725",
+      "kind": "source-code"
+    },
+    {
       "path": ".gitignore",
       "bytes": 661,
       "sha256": "5471b092b91458b0581c4295c69e336608258ee7a5d040b792f88737cdecbb58",
+      "kind": "documentation-or-config"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "bytes": 836,
+      "sha256": "b3b14d460c904c6e0812b9cf88028ce6a62ace5eccf6bf5d8ef39d74a354851b",
       "kind": "documentation-or-config"
     },
     {
@@ -46,8 +58,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 9886,
-      "sha256": "2a52661e0403c38bfee261c34b5de12859803c1c1e220796646c1f638c08f1fd",
+      "bytes": 6577,
+      "sha256": "4174fc95fcfc416710546ba171b27b718da8da521f37caa21e866d07295fb7b3",
       "kind": "documentation-or-config"
     },
     {
@@ -75,6 +87,12 @@
       "kind": "documentation-or-config"
     },
     {
+      "path": "audit/INSTALLER-0.8.1.md",
+      "bytes": 1290,
+      "sha256": "66e43471015068a51623255244a26841dcde420ac05580443270c9107b4599ef",
+      "kind": "documentation-or-config"
+    },
+    {
       "path": "audit/INVENTORY.md",
       "bytes": 2553,
       "sha256": "674bdfed170a3f2c98a0a30e1541f84b5ed4a1a7cebce29190677d894bfe0612",
@@ -88,8 +106,8 @@
     },
     {
       "path": "docs/BUILD.md",
-      "bytes": 4632,
-      "sha256": "c4655275edb108040dc99817e82e819ea280292f3a78c3b5d175a914837aa81c",
+      "bytes": 6415,
+      "sha256": "e80ac8bd149fd421d3870dab2a30b1d89c262d6a10c4394f5f77069505c7fb4c",
       "kind": "documentation-or-config"
     },
     {
@@ -114,6 +132,12 @@
       "path": "docs/ENERGY-GPU-RU.txt",
       "bytes": 3312,
       "sha256": "9b64dab8dccd38a220931bb96fdc6ee468b8919d79a53b715eab7911166d8658",
+      "kind": "documentation-or-config"
+    },
+    {
+      "path": "docs/INSTALL.md",
+      "bytes": 3761,
+      "sha256": "25a7918604360e5ac8c3a34d60aec8437b122b0a4602cd8fda8ca65db3164223",
       "kind": "documentation-or-config"
     },
     {
@@ -151,6 +175,12 @@
       "bytes": 85,
       "sha256": "a63b77552b51f013c7db69270edd0055d64edbe77cdd5b0b9584dfdeefac10c5",
       "kind": "documentation-or-config"
+    },
+    {
+      "path": "installer/VSP.iss",
+      "bytes": 3689,
+      "sha256": "dd1a669c9ca2ea108a44029621830087eec8c796e192d9b41ef9ddf1f1dabbbf",
+      "kind": "source-code"
     },
     {
       "path": "legacy/backend-0.3.8/Directory.Build.props",
@@ -621,16 +651,34 @@
       "kind": "documentation-or-config"
     },
     {
+      "path": "scripts/build-installer.ps1",
+      "bytes": 2503,
+      "sha256": "f4adb3fd36202aad3444cc6fcc23da701c6f9d7ed122a68d509ce0718944e146",
+      "kind": "source-code"
+    },
+    {
       "path": "scripts/build-source.ps1",
       "bytes": 960,
       "sha256": "e1e6299b46e07ae327f7cbf32bb72878a7e6faee22db4d4702ed8261ad122873",
       "kind": "documentation-or-config"
     },
     {
+      "path": "scripts/check-source-snapshot.py",
+      "bytes": 926,
+      "sha256": "334e3a1e2728ea4d8a0cf1a6bfe2e65f10608d2feac1b201b0918a67935ad47b",
+      "kind": "source-code"
+    },
+    {
       "path": "scripts/test-audit.py",
       "bytes": 1746,
       "sha256": "47cb705a7ebb5be5611ea9c0c386a53fc5bbfdbd6f42378e19c5d16cde903939",
       "kind": "documentation-or-config"
+    },
+    {
+      "path": "scripts/test-installer.ps1",
+      "bytes": 3398,
+      "sha256": "9beb8cc90df202c1896e6105b51e944f71efaebeb1ced08a237ba1af256e246f",
+      "kind": "source-code"
     },
     {
       "path": "src/QuietPC.App/App.xaml",
@@ -640,8 +688,8 @@
     },
     {
       "path": "src/QuietPC.App/App.xaml.cs",
-      "bytes": 990,
-      "sha256": "4b4f5f2ff214e16734fb7b923594537aef2862a328d6b237e52403bc85b2baa0",
+      "bytes": 1624,
+      "sha256": "efdd9485ae394314fe46b331262651175b302174eb15b9c14a8628e91d66e6a7",
       "kind": "source"
     },
     {
@@ -682,8 +730,8 @@
     },
     {
       "path": "src/QuietPC.App/CompetitivePanel.cs",
-      "bytes": 4392,
-      "sha256": "8477da9e81bd0a8046919dd8868badf85409450cff514aa79a30fc80793b8e89",
+      "bytes": 4388,
+      "sha256": "94a54d1f8c2bcf20224c9f3705c97a663f92428b4f8ddfd8dfc1214ae1490523",
       "kind": "source"
     },
     {
@@ -694,14 +742,14 @@
     },
     {
       "path": "src/QuietPC.App/EnergyPanel.cs",
-      "bytes": 6945,
-      "sha256": "090d9c568868e9e000ab91e33677bff59d3b4a46fd9020ddff29ed78c123041b",
+      "bytes": 6937,
+      "sha256": "1cb0edbde01e8014ad469a6f7fe85fdd60376df22b8efbc5bbfc67c4b281f271",
       "kind": "source"
     },
     {
       "path": "src/QuietPC.App/Features.cs",
-      "bytes": 16510,
-      "sha256": "711ca49d3db3e89557729378b41c6f152300ef95d4c0cde9e935da909c7b6622",
+      "bytes": 16490,
+      "sha256": "ce3737b4a0cb45366754ca835027ea371dc143683d4ffef8500ec5e8bf62438d",
       "kind": "source"
     },
     {
@@ -736,8 +784,8 @@
     },
     {
       "path": "src/QuietPC.App/HardwareCapabilities.cs",
-      "bytes": 3735,
-      "sha256": "092c4993cd6c456acbd7e005a83044f4972054f76c93b16f908b3d7296243334",
+      "bytes": 3733,
+      "sha256": "b63f187e33d84fe07a1319acf9fb3dbbb86d916e86df87cda3286aaafff3c177",
       "kind": "source"
     },
     {
@@ -754,14 +802,14 @@
     },
     {
       "path": "src/QuietPC.App/MainWindow.xaml",
-      "bytes": 6799,
-      "sha256": "5d1c4c65ccd5971ae7e1e9a78782010dbe22d1549aca3c2526d9a63a3b9977d4",
+      "bytes": 6795,
+      "sha256": "bbe3b07a5c6fbd2a8d309c23169f63c8a5c469c644108b7adb14f42048ab3ae0",
       "kind": "source"
     },
     {
       "path": "src/QuietPC.App/MainWindow.xaml.cs",
-      "bytes": 16554,
-      "sha256": "3e602f17718121ce31ec11efc46f338764d8953e241e826a2b8b3d6f52343789",
+      "bytes": 16592,
+      "sha256": "6f76056cebc122528623b446c0e3fe37df3b789e108b364febc7881092f4c6ba",
       "kind": "source"
     },
     {
@@ -790,8 +838,8 @@
     },
     {
       "path": "src/QuietPC.App/PortableMode.cs",
-      "bytes": 2179,
-      "sha256": "75b1ef3d784e21f6e366ce77b4ca667c4c8cdb380858b2c59d9d7af2ec8ef240",
+      "bytes": 2122,
+      "sha256": "d6d2d942ce008dc4f346ec00ef5c51afeb3a9834bb9df9e35d12139bb47b6c2d",
       "kind": "source"
     },
     {
@@ -802,14 +850,14 @@
     },
     {
       "path": "src/QuietPC.App/ProfileEditor.cs",
-      "bytes": 5382,
-      "sha256": "8f678c9e773d785fab5c5e1cd3993c2222f2438e33a4ee7d094d7df5e86db474",
+      "bytes": 5374,
+      "sha256": "360c6a9bfc4a6f7d1be186a5a3f0218a8d8ba19174094b1221013d1e365dc673",
       "kind": "source"
     },
     {
       "path": "src/QuietPC.App/QuietPC.App.csproj",
-      "bytes": 834,
-      "sha256": "706ac180787676cc60e3388fc99c3f100fed8683eba8ee4fb3e416bbc67979d2",
+      "bytes": 832,
+      "sha256": "7e7b875a7bdee119ebee19b176a9df139a875ebb4d280c8a5a291500f6c4ef95",
       "kind": "source"
     },
     {
@@ -820,14 +868,14 @@
     },
     {
       "path": "src/QuietPC.App/SteamGames.cs",
-      "bytes": 5664,
-      "sha256": "b8488b48feb10cd6e60ec5f0aad6976559d601ace293d7674d2619e4f7428764",
+      "bytes": 5660,
+      "sha256": "377903abac946878c74c78e235aac19b81d29aa31e8f278a8cc3d7fe2f19e2ec",
       "kind": "source"
     },
     {
       "path": "src/QuietPC.App/SystemTelemetry.cs",
-      "bytes": 7573,
-      "sha256": "0c1e2f21d8488778272a926a4fc4f791968baa21c11c3561e55e79e7a6e3ba8c",
+      "bytes": 7571,
+      "sha256": "14a42210d8dafe74af50d3f030c80d746300d444cbbd349722a28c4863c2b333",
       "kind": "source"
     },
     {
@@ -847,6 +895,12 @@
       "bytes": 531,
       "sha256": "d4aaaf93ac07cf2777c9eda1aaec26f11315fa50e10d3af9f5537f2f417806b2",
       "kind": "source"
+    },
+    {
+      "path": "src/QuietPC.Core/BackendAccess.cs",
+      "bytes": 244,
+      "sha256": "344aceaa79fb6189e4dce881ffbf9af7b0b62bbbd426db44b154eb6e93a1cb3a",
+      "kind": "source-code"
     },
     {
       "path": "src/QuietPC.Core/Calibration.cs",
@@ -886,8 +940,8 @@
     },
     {
       "path": "src/QuietPC.Core/MemoryLevel.cs",
-      "bytes": 668,
-      "sha256": "dc1090b61079318ab12795141713bb08679e24064e7ca846a42cb7d44e30bb56",
+      "bytes": 664,
+      "sha256": "7d0a5447fa4ed8f8228bc31c2e5650e38d14d14ffdff70bae554acffc22a9639",
       "kind": "source"
     },
     {
@@ -898,8 +952,8 @@
     },
     {
       "path": "src/QuietPC.Core/Models.cs",
-      "bytes": 10074,
-      "sha256": "8b117c49e39a4c465f683938a18fc22b6134295a7e4d211832d851f20bdbdcfd",
+      "bytes": 10063,
+      "sha256": "18e547fdd8c0c26c2f89153b96c89a2bc2aa4e1c4e746e72908dfbb7c664b50e",
       "kind": "source"
     },
     {
@@ -935,7 +989,7 @@
     {
       "path": "src/QuietPC.Monitor/QuietPC.Monitor.csproj",
       "bytes": 309,
-      "sha256": "7c353e47459680bcb3ef622a5f08aeee88eb8aafc886413799a98a4ea815236e",
+      "sha256": "c8d220b32daa90e998d3f3e558812a5ab5dc4782bea71dbc563198d8201e67f0",
       "kind": "source"
     },
     {
@@ -946,15 +1000,39 @@
     },
     {
       "path": "src/QuietPC.Service/Program.cs",
-      "bytes": 8707,
-      "sha256": "1896689d8482ce2dfd43941ff8c4d9ef086bbabce10f710595da6cbc94c318b5",
+      "bytes": 9396,
+      "sha256": "e4a09693744f5a75300e6398d0acfe02fb39a476825de0b539591274c32399a7",
       "kind": "source"
     },
     {
       "path": "src/QuietPC.Service/QuietPC.Service.csproj",
       "bytes": 424,
-      "sha256": "b5d9bc2d319dba9d2c177a2efe746d3c9a24e0d9cd5cdeb27ef4b0db037af7a2",
+      "sha256": "97fddd41102e784184087bc76d873b09aa2152d60f22f326e739a0cdb0a6daf7",
       "kind": "source"
+    },
+    {
+      "path": "src/QuietPC.Service/StateDirectory.cs",
+      "bytes": 2244,
+      "sha256": "2b280dfa48830697be1b9891f3b4eadea253dc5b1ec93054391bdef1c9973300",
+      "kind": "source-code"
+    },
+    {
+      "path": "src/QuietPC.Setup/Program.cs",
+      "bytes": 10767,
+      "sha256": "9b8da7e9dc0736c28b1d2eaa447c5eede05dbb8b2dfe7fe217faac8b0e1b08c5",
+      "kind": "source-code"
+    },
+    {
+      "path": "src/QuietPC.Setup/QuietPC.Setup.csproj",
+      "bytes": 571,
+      "sha256": "e8bb1e7ff0b556cd69416405d4dbf8b28194b9bca04e91ce023401585ceec466",
+      "kind": "documentation-or-config"
+    },
+    {
+      "path": "src/QuietPC.Setup/app.manifest",
+      "bytes": 401,
+      "sha256": "b884b164d885be0a45e796f7079af144a336de03987663d58fd09efe000edb30",
+      "kind": "documentation-or-config"
     },
     {
       "path": "src/QuietPC.Windows/MemoryCleaner.cs",
@@ -994,8 +1072,8 @@
     },
     {
       "path": "src/QuietPC.Windows/WindowsPower.cs",
-      "bytes": 5047,
-      "sha256": "58f92a709954d9a976f268d418e63e65846952796144ba7f201aae51a350dc27",
+      "bytes": 5045,
+      "sha256": "cdf03796dcdf2f747c08f1380266c44a919dc6f1b22377ac60f158ac99c5aa48",
       "kind": "source"
     },
     {
@@ -1012,8 +1090,8 @@
     },
     {
       "path": "tests/QuietPC.Tests/Program.cs",
-      "bytes": 32097,
-      "sha256": "d8522f2b7ac04d04fe4df3e76755da7b656a233e9bb6c3238b1fde9abccf1365",
+      "bytes": 33208,
+      "sha256": "b36586e86158fecc1cd7233ab3046563a1836cc84aee4c7c6517da6b82860f5d",
       "kind": "source"
     },
     {
@@ -1022,10 +1100,5 @@
       "sha256": "82023ddc2d9150a8512a1312b627b64bc5505de94f879b8cc1f6eae20e49eefc",
       "kind": "source"
     }
-  ],
-  "excludes": [
-    "audit/INVENTORY.json (self)",
-    "Git database (audited separately)"
-  ],
-  "filesCount": 170
+  ]
 }
