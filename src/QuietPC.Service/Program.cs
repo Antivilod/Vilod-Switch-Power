@@ -17,15 +17,15 @@ sealed class Host:ServiceBase {
  RecoveryEngine? engine;
  NvidiaFpsRecovery? fps;
  GpuPowerRecovery? gpu;
- GameBoostRecovery? boost;bool boosting;string powerDetail="";
+ GameBoostRecovery? boost;bool boosting;bool maintenance;string powerDetail="";
  DateTimeOffset lastTrim=DateTimeOffset.MinValue;
  string? appliedId;
  DateTimeOffset heartbeat;
  Reply current=new(true,false,"Выключено","Собственных изменений нет");
- string Dir=>portableDir??Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData),"QuietPC");
+ string Dir=>portableDir??StateDirectory.PathName;
  public void StartPortable()=>OnStart([]);
  public void StopPortable()=>OnStop();
- protected override void OnStart(string[] args){engine=new(new WindowsPower(),Path.Combine(Dir,"recovery.json"));fps=new(Path.Combine(Dir,"fps-recovery.json"),()=>new NvidiaDrs());gpu=new(Path.Combine(Dir,"gpu-recovery.json"),()=>new NvidiaPower());boost=new(new OwnedProcessPriority(owner),Path.Combine(Dir,"boost-recovery.json"));heartbeat=DateTimeOffset.UtcNow;_ = Run();}
+ protected override void OnStart(string[] args){StateDirectory.Prepare(Dir);engine=new(new WindowsPower(),Path.Combine(Dir,"recovery.json"));fps=new(Path.Combine(Dir,"fps-recovery.json"),()=>new NvidiaDrs());gpu=new(Path.Combine(Dir,"gpu-recovery.json"),()=>new NvidiaPower());boost=new(new OwnedProcessPriority(owner),Path.Combine(Dir,"boost-recovery.json"));heartbeat=DateTimeOffset.UtcNow;_ = Run();}
  void Log(string s){try{string p=Path.Combine(Dir,"service.log");if(File.Exists(p)&&new FileInfo(p).Length>1_000_000)File.Move(p,p+".old",true);File.AppendAllText(p,$"{DateTimeOffset.UtcNow:O} {s}\n");}catch{}}
  Reply Restore(){
   boosting=false;var errors=new List<string>();try{boost!.Restore();}catch(Exception e){errors.Add(e.Message);Log(e.ToString());}try{gpu!.Restore();}catch(Exception e){errors.Add(e.Message);Log(e.ToString());}
@@ -43,14 +43,16 @@ sealed class Host:ServiceBase {
     acl.AddAccessRule(new PipeAccessRule(new SecurityIdentifier(WellKnownSidType.NetworkSid,null),PipeAccessRights.FullControl,AccessControlType.Deny));
     acl.AddAccessRule(new PipeAccessRule(new SecurityIdentifier(owner),PipeAccessRights.ReadWrite,AccessControlType.Allow));
     acl.AddAccessRule(new PipeAccessRule(new SecurityIdentifier(WellKnownSidType.LocalSystemSid,null),PipeAccessRights.FullControl,AccessControlType.Allow));
+    acl.AddAccessRule(new PipeAccessRule(new SecurityIdentifier(WellKnownSidType.BuiltinAdministratorsSid,null),PipeAccessRights.ReadWrite,AccessControlType.Allow));
     using var pipe=NamedPipeServerStreamAcl.Create(pipeName,PipeDirection.InOut,1,PipeTransmissionMode.Byte,PipeOptions.Asynchronous,4096,4096,acl);
     await pipe.WaitForConnectionAsync(stop.Token);
     using var deadline=CancellationTokenSource.CreateLinkedTokenSource(stop.Token);deadline.CancelAfter(TimeSpan.FromSeconds(3));
     // Strict bounded frame: UTF8 JSON <= 65536 bytes, one request per connection.
     byte[] len=new byte[4];await pipe.ReadExactlyAsync(len,deadline.Token);int n=BitConverter.ToInt32(len);if(n is <1 or >65536)continue;
     byte[] buf=new byte[n];await pipe.ReadExactlyAsync(buf,deadline.Token);var request=JsonSerializer.Deserialize<Request>(buf)??throw new IOException("Пустая команда");
-    string? sid=null;pipe.RunAsClient(()=>{using var identity=WindowsIdentity.GetCurrent();sid=identity.User?.Value;});
-    if(sid!=owner)continue;
+    string? sid=null;bool administrator=false;pipe.RunAsClient(()=>{using var identity=WindowsIdentity.GetCurrent();sid=identity.User?.Value;administrator=new WindowsPrincipal(identity).IsInRole(WindowsBuiltInRole.Administrator);});
+    // An elevated uninstaller may only inspect state and request restoration.
+    if(!BackendAccess.Allows(owner,sid,administrator,request.Command))continue;
     deadline.CancelAfter(TimeSpan.FromSeconds(20));
     await gate.WaitAsync(deadline.Token);
     Reply response;
@@ -64,7 +66,11 @@ sealed class Host:ServiceBase {
        if(DateTimeOffset.UtcNow-lastTrim<TimeSpan.FromMinutes(1))throw new InvalidOperationException("Повторная очистка доступна через минуту");
        var trim=MemoryCleaner.TrimFileCache();lastTrim=DateTimeOffset.UtcNow;response=new(true,engine!.Enabled,"Память",trim,appliedId);break;
       case "off":current=Restore();response=current;break;
+      case "prepareuninstall":
+       if(!administrator)throw new UnauthorizedAccessException("Administrator rights are required for removal");
+       maintenance=true;current=Restore();response=current;break;
       case "apply":
+       if(maintenance)throw new InvalidOperationException("VSP service is preparing for removal");
        if((engine!.Current is not null||fps!.Pending||gpu!.Pending||boost!.Pending)&&!engine.Enabled)throw new InvalidOperationException("Сначала восстановите незавершённую транзакцию");
        var p=request.Profile??throw new ArgumentException("Профиль отсутствует");p.Validate();var games=request.Games??[];if(games.Length>200)throw new ArgumentException("Слишком много игр");
        boost!.Restore();boosting=false;
