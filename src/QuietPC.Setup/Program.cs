@@ -80,6 +80,7 @@ static class Program {
   try{
    Sc("create",ServiceName,"binPath=",'"'+Backend+"\" "+owner,"start=","delayed-auto","obj=","LocalSystem","DisplayName=","Vilod Switch Power");created=true;
    Sc("description",ServiceName,"Local VSP power backend. Restores owned changes on stop and heartbeat loss.");
+   Sc("failure",ServiceName,"reset=","86400","actions=","restart/5000/restart/30000/restart/60000");
    using var service=new ServiceController(ServiceName);service.Start();service.WaitForStatus(ServiceControllerStatus.Running,TimeSpan.FromSeconds(30));
    Verify();
   }catch{
@@ -121,6 +122,17 @@ static class Program {
     var restored=Exchange(new("off"));
     if(!restored.Ok||restored.Enabled||power.Active()!=original||power.Read(original)!=baseline)throw new IOException("Power restoration failed");
    }
+   var active=Exchange(new("apply",Profile.Defaults.Single(p=>p.Id=="work"),[],false));
+   if(!active.Ok||!active.Enabled||!GetServicePid(out uint oldPid))throw new IOException("Cannot prepare crash recovery test");
+   using(var process=Process.GetProcessById((int)oldPid)){process.Kill();if(!process.WaitForExit(5000))throw new IOException("Backend did not terminate in the crash test");}
+   var timeout=Stopwatch.StartNew();bool restarted=false;
+   while(timeout.Elapsed<TimeSpan.FromSeconds(35)){
+    if(GetServicePid(out uint nextPid)&&nextPid!=oldPid){restarted=true;break;}
+    Thread.Sleep(250);
+   }
+   if(!restarted)throw new IOException("Service did not restart after a crash");
+   var recovered=Exchange(new("heartbeat"));
+   if(!recovered.Ok||recovered.Enabled||power.Active()!=original||power.Read(original)!=baseline)throw new IOException("Crash recovery did not restore the power plan");
   }finally{Exchange(new("off"));}
  }
  [StructLayout(LayoutKind.Sequential)]struct Status{public uint Type,State,Accepted,Win32Exit,SpecificExit,Checkpoint,WaitHint,ProcessId,Flags;}
