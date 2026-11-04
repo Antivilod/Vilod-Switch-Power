@@ -14,12 +14,29 @@ public sealed class WindowsPower:IPower {
    Check(PowerWriteACValueIndex(0,ref id,ref Cpu,ref Epp,epp));Check(PowerWriteDCValueIndex(0,ref id,ref Cpu,ref Epp,epp));
    Check(PowerReadACValueIndex(0,ref source,ref Cpu,ref Minimum,out var minimumAc));Check(PowerReadDCValueIndex(0,ref source,ref Cpu,ref Minimum,out var minimumDc));
    Check(PowerWriteACValueIndex(0,ref id,ref Cpu,ref Minimum,Math.Min(5u,minimumAc)));Check(PowerWriteDCValueIndex(0,ref id,ref Cpu,ref Minimum,Math.Min(5u,minimumDc)));
-   if(epp==0){Check(PowerWriteACValueIndex(0,ref id,ref Cpu,ref Boost,2));Check(PowerWriteDCValueIndex(0,ref id,ref Cpu,ref Boost,2));}
-   if(epp>=80){Check(PowerWriteACValueIndex(0,ref id,ref Cpu,ref Boost,0));Check(PowerWriteDCValueIndex(0,ref id,ref Cpu,ref Boost,0));}
+   // Hybrid CPUs expose separate policies for their efficiency classes.
+   foreach(var setting in new[]{new Guid("36687f9e-e3a5-4dbf-b1dc-15eb381c6864"),new Guid("36687f9e-e3a5-4dbf-b1dc-15eb381c6865")})WriteOptional(id,setting,epp,epp);
+   foreach(var settingId in new[]{new Guid("893dee8e-2bef-41e0-89c6-b55d0929964d"),new Guid("893dee8e-2bef-41e0-89c6-b55d0929964e")}){
+    var setting=settingId;
+    var acResult=PowerReadACValueIndex(0,ref source,ref Cpu,ref setting,out var acMinimum);
+    var dcResult=PowerReadDCValueIndex(0,ref source,ref Cpu,ref setting,out var dcMinimum);
+    if(acResult==2&&dcResult==2)continue;Check(acResult);Check(dcResult);
+    WriteOptional(id,setting,Math.Min(5u,acMinimum),Math.Min(5u,dcMinimum));
+   }
+   // Gaming must permit Turbo even when the original scheme disabled it.
+   uint turbo=epp>=80?0u:epp==0?2u:1u;
+   Check(PowerWriteACValueIndex(0,ref id,ref Cpu,ref Boost,turbo));Check(PowerWriteDCValueIndex(0,ref id,ref Cpu,ref Boost,turbo));
    var label=System.Text.Encoding.Unicode.GetBytes("VSP - "+(epp==0?"Game Boost":epp>=80?"Работа":"Игра")+"\0");Check(PowerWriteFriendlyName(0,ref id,0,0,label,(uint)label.Length));
    var result=Read(id);if(result.Ac!=epp||result.Dc!=epp)throw new IOException("EPP не подтверждён");return result;
   }
   catch{PowerDeleteScheme(0,ref id);throw;}
+ }
+ static void WriteOptional(Guid id,Guid setting,uint ac,uint dc){
+  var ar=PowerReadACValueIndex(0,ref id,ref Cpu,ref setting,out _);var dr=PowerReadDCValueIndex(0,ref id,ref Cpu,ref setting,out _);
+  if(ar==2&&dr==2)return;Check(ar);Check(dr);
+  Check(PowerWriteACValueIndex(0,ref id,ref Cpu,ref setting,ac));Check(PowerWriteDCValueIndex(0,ref id,ref Cpu,ref setting,dc));
+  Check(PowerReadACValueIndex(0,ref id,ref Cpu,ref setting,out var actualAc));Check(PowerReadDCValueIndex(0,ref id,ref Cpu,ref setting,out var actualDc));
+  if(actualAc!=ac||actualDc!=dc)throw new IOException("Политика гибридного CPU не подтверждена");
  }
  public Scheme Read(Guid id){
   var rc=PowerReadACValueIndex(0,ref id,ref Cpu,ref Epp,out var ac);if(rc==2)return new(id,0,0,"missing");Check(rc);Check(PowerReadDCValueIndex(0,ref id,ref Cpu,ref Epp,out var dc));

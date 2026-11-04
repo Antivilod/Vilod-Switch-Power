@@ -15,6 +15,7 @@ PATTERNS={
  'bearer-credential':r'Bearer[ \t]+[A-Za-z0-9_.-]{24,}',
  'email':r'[\w.+-]+@[\w.-]+\.[A-Za-z]{2,}',
 }
+PUBLIC_IDENTITIES={'contributors@example.invalid','195017834+Antivilod@users.noreply.github.com','noreply@github.com'}
 REGEX={k:re.compile(v,re.I if k not in {'access-token'} else 0) for k,v in PATTERNS.items()}
 def run_git(root,*args):
  p=subprocess.run(['git','-c','core.hooksPath=/dev/null','-C',str(root),*args],capture_output=True)
@@ -29,7 +30,7 @@ def inspect(data,location,denylist,allow_legal=False):
   if any(rx.search(t) for t in texts):
    item={'location':location,'category':kind}
    if kind=='email' and allow_legal:reviewed.append(item|{'disposition':'upstream public attribution retained'})
-   elif kind=='email' and all(not rx.search(t) or set(rx.findall(t))<= {'contributors@example.invalid'} for t in texts):reviewed.append(item|{'disposition':'reserved public Git identity'})
+   elif kind=='email' and all(not rx.search(t) or set(rx.findall(t))<=PUBLIC_IDENTITIES for t in texts):reviewed.append(item|{'disposition':'approved public Git identity'})
    else:findings.append(item)
  for name in denylist:
   if len(name)>2 and any(re.search(r'(?<![\w])'+re.escape(name)+r'(?![\w])',t,re.I) for t in texts):findings.append({'location':location,'category':'local-identity'})

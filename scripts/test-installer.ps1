@@ -3,9 +3,9 @@ Set-StrictMode -Version Latest
 Set-Location (Split-Path $PSScriptRoot -Parent)
 if (-not $IsWindows) { throw 'This test requires a disposable Windows x64 runner with administrator rights.' }
 $root = Join-Path $env:ProgramFiles 'Vilod\VSP'
-$setup = (Resolve-Path artifacts/release/VSP-0.8.1-Setup-x64.exe).Path
+$setup = (Resolve-Path artifacts/release/VSP-0.8.2-Setup-x64.exe).Path
 $reportPath = Join-Path (Get-Location) 'artifacts/release/WINDOWS-VERIFICATION.json'
-$checks = [ordered]@{version='0.8.1';platform='Windows hosted runner';install=$false;service=$false;power_restore=$false;service_crash_restore=$false;ui_initialization=$false;uninstall=$false;gpu_hardware_tested=$false}
+$checks = [ordered]@{version='0.8.2';platform='Windows hosted runner';install=$false;service=$false;power_restore=$false;service_crash_restore=$false;ui_initialization=$false;uninstall=$false;gpu_hardware_tested=$false}
 $installed = $false
 $ui = $null
 try {
@@ -31,7 +31,7 @@ try {
     if (-not $ui.WaitForExit(30000)) { throw 'UI initialization timed out.' }
     if ($ui.ExitCode -ne 0 -or -not (Test-Path -LiteralPath $uiReport)) { throw 'UI smoke process failed.' }
     $result = Get-Content -Raw -LiteralPath $uiReport | ConvertFrom-Json
-    if (-not $result.ui_initialized -or $result.version -ne '0.8.1') { throw 'UI window, version or profile list check failed.' }
+    if (-not $result.ui_initialized -or $result.version -ne '0.8.2') { throw 'UI window, version or profile list check failed.' }
     $checks.ui_initialization = $true
     $remove = Start-Process -FilePath (Join-Path $root 'unins000.exe') -ArgumentList '/VERYSILENT','/SUPPRESSMSGBOXES','/NORESTART' -Wait -PassThru
     if ($remove.ExitCode -ne 0) { throw 'Uninstaller failed.' }

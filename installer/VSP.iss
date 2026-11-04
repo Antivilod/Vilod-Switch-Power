@@ -1,7 +1,7 @@
 #ifndef RepoRoot
   #error RepoRoot must be supplied by the build script
 #endif
-#define AppVersion "0.8.1"
+#define AppVersion "0.8.2"
 [Setup]
 AppId={{B70F777F-8ACD-413D-945E-212A6390C227}
 AppName=Vilod Switch Power
