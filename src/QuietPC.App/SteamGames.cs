@@ -52,7 +52,7 @@ public partial class MainWindow {
   Reload();
   var refresh=new System.Windows.Controls.Button{Content="Обновить сейчас",Margin=new Thickness(0,8,0,0)};body.Children.Add(refresh);
   refresh.Click+=async(_,_)=>{refresh.IsEnabled=false;try{await RefreshSteam(true);Reload();}finally{refresh.IsEnabled=true;}};
-  Paragraph(body,"Автопереключение действует при включённом VSP и включённом автоматическом режиме: вне игр — Работа, в игре — её профиль. Профиль не меняет графику игры и не гарантирует рост FPS. Для нового FPS-лимита иногда нужен перезапуск игры.");
+  Paragraph(body,"Автопереключение действует при включённом VSP и включённом автоматическом режиме: вне игр - Работа, в игре - её профиль. Профиль не меняет графику игры и не гарантирует рост FPS. Для нового FPS-лимита иногда нужен перезапуск игры.");
   ActionButton(body,"Сохранить",()=>{Capture();if(fallback.SelectedValue is not string id)throw new ArgumentException("Создайте игровой профиль");prefs.DiscoverSteamGames=discovery.IsChecked==true;prefs.DefaultGameProfile=id;foreach(var game in steamGames)if(!edits.ContainsKey(game.AppId))edits[game.AppId]=id;prefs.SteamPresets=edits.Select(p=>new SteamPreset(p.Key,p.Value)).ToList();Save();activeGameKey="";steamChecked=DateTimeOffset.MinValue;win.Close();});
   win.ShowDialog();
  }

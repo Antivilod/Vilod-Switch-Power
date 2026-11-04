@@ -22,7 +22,7 @@ public partial class MainWindow {
   var h=HardwareCapabilities.Read();var window=Panel("VSP · Возможности компьютера",560,650,out var body);
   Paragraph(body,h.Cpu+"\n"+string.Join("\n",h.Graphics));
   Paragraph(body,"Настройки этого компьютера: "+h.Fingerprint+"\nВ portable настройки разных устройств хранятся отдельно.");
-  Paragraph(body,h.NvidiaPower?$"Управление GPU доступно. Допустимый диапазон: {h.MinimumGpuWatts:F0}–{h.MaximumGpuWatts:F0} Вт. Лимит FPS зависит от профилей NVIDIA.":"Управление мощностью GPU не подтверждено. Автоподбор отключён; мониторинг и политика CPU могут оставаться доступны.");
+  Paragraph(body,h.NvidiaPower?$"Управление GPU доступно. Допустимый диапазон: {h.MinimumGpuWatts:F0}-{h.MaximumGpuWatts:F0} Вт. Лимит FPS зависит от профилей NVIDIA.":"Управление мощностью GPU не подтверждено. Автоподбор отключён; мониторинг и политика CPU могут оставаться доступны.");
   Paragraph(body,h.CpuPowerStatus);
   Paragraph(body,"Температура CPU требует отдельного доступного источника датчиков. Общее потребление ПК из розетки не измеряется. Для него нужен внешний ваттметр.");
   ActionButton(body,"Самопроверка применённой политики CPU",PowerCheck);

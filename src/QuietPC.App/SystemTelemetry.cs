@@ -38,7 +38,7 @@ public sealed class SystemMonitor {
   return values;
  }
  static string Rate(double bytes)=>bytes>=1048576?$"{bytes/1048576:F2} МБ/с":$"{bytes/1024:F1} КБ/с";
- static string? Clock(){try{var data=new CpuPower[Environment.ProcessorCount];if(CallNtPowerInformation(11,0,0,data,(uint)(data.Length*Marshal.SizeOf<CpuPower>()))!=0)return null;uint min=data.Min(c=>c.CurrentMhz),max=data.Max(c=>c.CurrentMhz);return min==max?$"{max} МГц":$"{min}–{max} МГц";}catch{return null;}}
+ static string? Clock(){try{var data=new CpuPower[Environment.ProcessorCount];if(CallNtPowerInformation(11,0,0,data,(uint)(data.Length*Marshal.SizeOf<CpuPower>()))!=0)return null;uint min=data.Min(c=>c.CurrentMhz),max=data.Max(c=>c.CurrentMhz);return min==max?$"{max} МГц":$"{min}-{max} МГц";}catch{return null;}}
  [StructLayout(LayoutKind.Sequential)]struct CpuPower{public uint Number,MaxMhz,CurrentMhz,LimitMhz,MaxIdle,CurrentIdle;}
  [DllImport("kernel32.dll")]static extern bool GetSystemTimes(out ulong idle,out ulong kernel,out ulong user);
  [DllImport("powrprof.dll")]static extern uint CallNtPowerInformation(int level,nint input,uint size,[Out]CpuPower[] output,uint length);
