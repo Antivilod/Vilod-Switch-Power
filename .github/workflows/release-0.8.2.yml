@@ -1,0 +1,181 @@
+name: VSP 0.8.2 - checked patch, Windows tests and release
+'on':
+  push:
+    branches:
+    - release/v0.8.2
+    paths:
+    - .github/workflows/release-0.8.2.yml
+  workflow_dispatch: {}
+permissions:
+  contents: read
+concurrency:
+  group: vsp-release-0.8.2
+  cancel-in-progress: false
+jobs:
+  prepare:
+    if: github.repository == 'Antivilod/Vilod-Switch-Power' && github.ref == 'refs/heads/release/v0.8.2'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    outputs:
+      sha: ${{ steps.source.outputs.sha }}
+    steps:
+    - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+      with:
+        persist-credentials: false
+        fetch-depth: 0
+        ref: ${{ github.ref_name }}
+    - name: Apply pinned patch, inventory and audit before committing
+      id: source
+      run: |
+        set -euo pipefail
+        printf '%s  %s\n' '6158e38f364654cbff2e1545dc6b99e4f78d2ec4feca13f3b0866344f578e399' audit/patches/v0.8.2.patch | sha256sum --check
+        base=85e86b41f133c1dbd3a789aae7e7efd5115e81a6
+        git merge-base --is-ancestor "$base" HEAD
+        if grep -q '<Version>0.8.2</Version>' src/QuietPC.App/QuietPC.App.csproj; then
+          git apply --reverse --check audit/patches/v0.8.2.patch
+        else
+          git diff --exit-code "$base" HEAD -- . ':!audit/patches/v0.8.2.patch' ':!.github/workflows/release-0.8.2.yml'
+          git apply --check audit/patches/v0.8.2.patch
+          git apply audit/patches/v0.8.2.patch
+        fi
+        git add --all
+        python - <<'PYCODE'
+        from pathlib import Path
+        import subprocess,json,hashlib
+        p=Path('audit/INVENTORY.json')
+        d=json.loads(p.read_text());previous={e['path']:e['kind'] for e in d['files']}
+        files=[]
+        for f in sorted(subprocess.check_output(['git','ls-files','-z']).decode().split('\0')):
+            if not f or f=='audit/INVENTORY.json':continue
+            b=Path(f).read_bytes()
+            files.append({'path':f,'bytes':len(b),'sha256':hashlib.sha256(b).hexdigest(),'kind':previous.get(f,'source-code' if f.endswith(('.cs','.csproj','.py','.yml')) else 'documentation-or-config')})
+        p.write_text(json.dumps({'schema':1,'version':'0.8.2','files':files},indent=2,ensure_ascii=False)+'\n')
+        PYCODE
+        python scripts/check-source-snapshot.py
+        python scripts/audit-release-history.py
+        python scripts/test-audit.py
+        git add --all
+        if ! git diff --cached --quiet; then
+          git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' -c commit.gpgsign=false commit -m 'VSP 0.8.2: hybrid CPU policy and verified Windows release'
+        fi
+        python scripts/audit-release-history.py
+        sha=$(git rev-parse HEAD)
+        echo "sha=$sha" >> "$GITHUB_OUTPUT"
+    - name: Push reviewed source branch
+      env:
+        GH_TOKEN: ${{ github.token }}
+      run: |
+        set -euo pipefail
+        gh auth setup-git
+        git push origin HEAD:refs/heads/release/v0.8.2
+  windows:
+    needs: prepare
+    runs-on: windows-2025
+    timeout-minutes: 25
+    permissions:
+      contents: read
+    defaults:
+      run:
+        shell: pwsh
+    steps:
+    - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+      with:
+        persist-credentials: false
+        fetch-depth: 0
+        ref: ${{ needs.prepare.outputs.sha }}
+    - uses: actions/setup-dotnet@26b0ec14cb23fa6904739307f278c14f94c95bf1
+      with:
+        dotnet-version: 10.0.x
+    - name: Audit source and Git objects
+      run: |-
+        python scripts/check-source-snapshot.py
+        if ($LASTEXITCODE) { throw "Source audit failed" }
+        python scripts/audit-release-history.py
+        if ($LASTEXITCODE) { throw "History audit failed" }
+        python scripts/test-audit.py
+        if ($LASTEXITCODE) { throw "Scanner regression failed" }
+    - name: Build installer and run 103 core tests
+      run: ./scripts/build-installer.ps1
+    - name: Native AC/DC, hybrid class and Turbo regression
+      run: |-
+        dotnet run --project tests/QuietPC.Windows.Tests -c Release -- artifacts/release/CPU-POLICY-VERIFICATION.json
+        if ($LASTEXITCODE) { throw "CPU policy regression failed" }
+    - name: Install, service, restore, crash recovery, UI and uninstall
+      run: ./scripts/test-installer.ps1
+    - name: Upload only fully verified release files
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: VSP-0.8.2-windows-x64-verified
+        path: |-
+          artifacts/release/VSP-0.8.2-Setup-x64.exe
+          artifacts/release/SHA256SUMS.txt
+          artifacts/release/WINDOWS-VERIFICATION.json
+          artifacts/release/CPU-POLICY-VERIFICATION.json
+        if-no-files-found: error
+        retention-days: 14
+  publish:
+    needs:
+    - prepare
+    - windows
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+      actions: read
+    env:
+      GH_TOKEN: ${{ github.token }}
+      GH_REPO: ${{ github.repository }}
+      RUN_ID: ${{ github.run_id }}
+      SOURCE_SHA: ${{ needs.prepare.outputs.sha }}
+    steps:
+    - name: Check evidence and publish exact tested installer
+      run: |
+        set -euo pipefail
+        gh run download "$RUN_ID" --name VSP-0.8.2-windows-x64-verified --dir verified
+        cd verified
+        sha256sum --check SHA256SUMS.txt
+        python - <<'PYCODE'
+        from pathlib import Path
+        import json,os
+        expected={'VSP-0.8.2-Setup-x64.exe','SHA256SUMS.txt','WINDOWS-VERIFICATION.json','CPU-POLICY-VERIFICATION.json'}
+        assert {p.name for p in Path('.').iterdir()}==expected
+        w=json.load(open('WINDOWS-VERIFICATION.json',encoding='utf-8-sig'))
+        c=json.load(open('CPU-POLICY-VERIFICATION.json',encoding='utf-8-sig'))
+        assert w['version']==c['version']=='0.8.2'
+        for key in ('install','service','power_restore','service_crash_restore','ui_initialization','uninstall'):assert w[key] is True,key
+        for key in ('epp_ac_dc','minimum_ac_dc','turbo_0_1_2','gaming_from_turbo_disabled_base','activation_restore'):assert c[key] is True,key
+        assert w['gpu_hardware_tested'] is False and c['physical_hybrid_hardware_tested'] is False
+        for key in ('additional_epp_classes_tested','additional_minimum_classes_tested'):assert type(c[key]) is int and 0<=c[key]<=2
+        print(json.dumps({'installer':w,'cpu_policy':c},indent=2))
+        PYCODE
+        cd ..
+        cat > notes.md <<'NOTES'
+        # Vilod Switch Power 0.8.2
+
+        Исправление CPU-политик для гибридных процессоров и установщик Windows x64.
+
+        ## Скачать и установить
+        Скачайте **VSP-0.8.2-Setup-x64.exe** и **SHA256SUMS.txt** из Assets. Проверьте SHA-256. .NET включён, для установки службы нужны права администратора. После установки откройте VSP из меню «Пуск», выберите режим и включите управление.
+
+        Существующая служба QuietPC/VSP не заменяется. Перед переходом выключите управление и используйте штатное удаление старой версии. При конфликте восстановления сохраните данные и не обходите защиту установщика.
+
+        ## Изменения
+        - EPP и минимальное состояние CPU задаются также для efficiency classes 1/2, если Windows предоставляет эти настройки. Дополнительные записи проверяются чтением.
+        - «Работа» отключает Turbo (0), обычные игровые профили явно включают штатный Turbo (1), профили с EPP 0 / Game Boost задают режим 2. Игровой Turbo больше не наследует отключение из базовой схемы.
+        - Согласованы версии интерфейса, установщика и проверок: App/Monitor/Setup 0.8.2, Service 0.4.3.
+        - Публичные настройки первого запуска, логотип и GPU-функции не изменены. Личные профили, логи и сведения об устройстве владельца не включены.
+
+        ## Проверки
+        Выпуск создаётся только после успешных 103 тестов ядра, Windows-проверок установки, службы, применения/восстановления питания, восстановления после сбоя службы, запуска окна и удаления. Отдельная регрессия проверяет EPP 90/70/0, AC/DC, minimum 3/5, Turbo 0/1/2, игровой режим из базы с выключенным Turbo, активацию и сохранность исходной схемы.
+
+        WINDOWS-VERIFICATION.json и CPU-POLICY-VERIFICATION.json приложены. Число проверенных дополнительных классов отражено в CPU-отчёте; отсутствующие настройки пропускаются. Наличие настройки на сервере не подтверждает физический гибридный CPU.
+
+        ## Ограничения
+        Предварительный выпуск, установщик без цифровой подписи. CI использует Windows Server 2025. Реальные игры, термостабильность, NVIDIA и ноутбук владельца этим CI не проверены. Рост FPS или снижение температур не обещаются. Защиту Windows ради установки не отключайте.
+
+        Собственный код MIT, сторонние лицензии сохранены. MULTIKIT не затрагивается.
+        NOTES
+        printf '\nSource commit: %s\nCI: https://github.com/%s/actions/runs/%s\n' "$SOURCE_SHA" "$GH_REPO" "$RUN_ID" >> notes.md
+        gh release create v0.8.2 verified/VSP-0.8.2-Setup-x64.exe verified/SHA256SUMS.txt verified/WINDOWS-VERIFICATION.json verified/CPU-POLICY-VERIFICATION.json --target "$SOURCE_SHA" --title 'Vilod Switch Power 0.8.2 - hybrid CPU fix' --notes-file notes.md --prerelease
