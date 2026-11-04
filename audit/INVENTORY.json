@@ -9,6 +9,12 @@
       "kind": "documentation-or-config"
     },
     {
+      "path": ".github/workflows/publish-0.8.1.yml",
+      "bytes": 4508,
+      "sha256": "c0ad46ae8727ea66f7ab0aa9b975e529338563b0be1e4907b7aadd8874b94c45",
+      "kind": "source-code"
+    },
+    {
       "path": ".github/workflows/windows-installer.yml",
       "bytes": 1435,
       "sha256": "21fe0a3f66d25a556dcda5b4669e80c12431a03cf1ca34c635afebdb6b994725",
@@ -22,8 +28,8 @@
     },
     {
       "path": "CHANGELOG.md",
-      "bytes": 836,
-      "sha256": "b3b14d460c904c6e0812b9cf88028ce6a62ace5eccf6bf5d8ef39d74a354851b",
+      "bytes": 928,
+      "sha256": "69c9eaacc3e8c771234053bb0621e1bd3f0d0615689c962b61d05ec3d0d26691",
       "kind": "documentation-or-config"
     },
     {
@@ -58,8 +64,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 6577,
-      "sha256": "4174fc95fcfc416710546ba171b27b718da8da521f37caa21e866d07295fb7b3",
+      "bytes": 6849,
+      "sha256": "068c905c7890a78e01d99fe6ace9fd851ce080ab29f0015d01f0aa1159a393de",
       "kind": "documentation-or-config"
     },
     {
@@ -88,8 +94,8 @@
     },
     {
       "path": "audit/INSTALLER-0.8.1.md",
-      "bytes": 1290,
-      "sha256": "66e43471015068a51623255244a26841dcde420ac05580443270c9107b4599ef",
+      "bytes": 1773,
+      "sha256": "9ae4062062742df4c78468915c06c514b0385bf3a3ee74aaa17846ff3f435c00",
       "kind": "documentation-or-config"
     },
     {
@@ -136,8 +142,8 @@
     },
     {
       "path": "docs/INSTALL.md",
-      "bytes": 3761,
-      "sha256": "25a7918604360e5ac8c3a34d60aec8437b122b0a4602cd8fda8ca65db3164223",
+      "bytes": 3892,
+      "sha256": "0dbfa11f47cbd8cb08b51d8f7f21f88b4e515f47e5f45ebff5968e81e93c999b",
       "kind": "documentation-or-config"
     },
     {
