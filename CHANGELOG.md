@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.8.3 - installer diagnostics
+
+- Distinguish an existing QuietPC service from an occupied install path, with English and Russian recovery instructions.
+- Test both preflight conflicts before validating installation, service recovery, UI and removal.
+- Add an independent Rust CLI to verify a file against its SHA-256 manifest entry.
+
 ## 0.8.2 - hybrid CPU policy fix, 2026-11-04
 
 - Apply EPP and minimum processor state to additional efficiency classes 1/2 only when their Windows settings exist; verify optional writes by reading them back.

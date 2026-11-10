@@ -46,7 +46,7 @@ try {
 }
 if (!policies || !restored) throw new IOException("CPU-policy verification failed.");
 File.WriteAllText(args[0], JsonSerializer.Serialize(new {
-    version = "0.8.2", platform = "Windows hosted runner",
+    version = "0.8.3", platform = "Windows hosted runner",
     epp_ac_dc = true, minimum_ac_dc = true, turbo_0_1_2 = true,
     gaming_from_turbo_disabled_base = true, activation_restore = restored,
     additional_epp_classes_tested = eppClasses,

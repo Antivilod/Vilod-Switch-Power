@@ -54,3 +54,6 @@ nuget.config
 Thumbs.db
 Desktop.ini
 .DS_Store
+
+# Rust CLI build output
+tools/checksum/target/

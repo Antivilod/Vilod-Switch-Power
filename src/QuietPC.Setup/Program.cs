@@ -21,10 +21,7 @@ static class Program {
    if(!new WindowsPrincipal(identity).IsInRole(WindowsBuiltInRole.Administrator))throw new UnauthorizedAccessException("Administrator rights are required");
    if(args.Length!=1)throw new ArgumentException("Use --preflight, --install, --remove, --verify or --smoke-power");
    switch(args[0]){
-    case "--preflight":
-     if(Exists())throw new IOException("A QuietPC/VSP service already exists. This installer will not replace it. Remove the previous installation using its own uninstaller first.");
-     if(Directory.Exists(Root))throw new IOException("The installation directory already exists. Use its uninstaller or resolve the previous installation first.");
-     Console.WriteLine("PASS_PREFLIGHT");break;
+    case "--preflight":return Preflight();
     case "--install":Install();Console.WriteLine("PASS_INSTALL");break;
     case "--remove":Remove();Console.WriteLine("PASS_REMOVE");break;
     case "--verify":Verify();Console.WriteLine("PASS_SERVICE");break;
@@ -33,6 +30,26 @@ static class Program {
    }
    return 0;
   }catch(Exception error){Console.Error.WriteLine(error.Message);return 1;}
+ }
+ static int Preflight() {
+  if (Exists()) {
+   Console.Error.WriteLine("The QuietPC service is already registered.");
+   return 20;
+  }
+
+  try {
+   // Attributes also catch a file or a redirected entry at the installation path.
+   File.GetAttributes(Root);
+   Console.Error.WriteLine("The VSP installation path is already occupied.");
+   return 21;
+  } catch (FileNotFoundException) {
+   // No entry at the installation path.
+  } catch (DirectoryNotFoundException) {
+   // A parent directory has not been created yet.
+  }
+
+  Console.WriteLine("PASS_PREFLIGHT");
+  return 0;
  }
  static bool Exists(){using var key=Registry.LocalMachine.OpenSubKey(@"SYSTEM\CurrentControlSet\Services\"+ServiceName);return key!=null;}
  static void ValidateRoot(){
