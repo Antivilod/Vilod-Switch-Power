@@ -3,13 +3,30 @@ Set-StrictMode -Version Latest
 Set-Location (Split-Path $PSScriptRoot -Parent)
 if (-not $IsWindows) { throw 'This test requires a disposable Windows x64 runner with administrator rights.' }
 $root = Join-Path $env:ProgramFiles 'Vilod\VSP'
-$setup = (Resolve-Path artifacts/release/VSP-0.8.2-Setup-x64.exe).Path
+$setup = (Resolve-Path artifacts/release/VSP-0.8.3-Setup-x64.exe).Path
 $reportPath = Join-Path (Get-Location) 'artifacts/release/WINDOWS-VERIFICATION.json'
-$checks = [ordered]@{version='0.8.2';platform='Windows hosted runner';install=$false;service=$false;power_restore=$false;service_crash_restore=$false;ui_initialization=$false;uninstall=$false;gpu_hardware_tested=$false}
+$checks = [ordered]@{version='0.8.3';platform='Windows hosted runner';occupied_path_blocked=$false;existing_service_blocked=$false;install=$false;service=$false;power_restore=$false;service_crash_restore=$false;ui_initialization=$false;uninstall=$false;gpu_hardware_tested=$false}
 $installed = $false
 $ui = $null
 try {
     if ((Get-Service QuietPC -ErrorAction SilentlyContinue) -or (Test-Path -LiteralPath $root)) { throw 'Runner is not clean; refusing to change an existing installation.' }
+    $preflightLog = Join-Path ([IO.Path]::GetTempPath()) ('vsp-preflight-' + [Guid]::NewGuid() + '.log')
+    New-Item -Path $root -ItemType Directory -Force | Out-Null
+    try {
+        $blocked = Start-Process -FilePath $setup -ArgumentList '/VERYSILENT','/SUPPRESSMSGBOXES','/NORESTART','/SP-',('/LOG="' + $preflightLog + '"') -Wait -PassThru
+        if ($blocked.ExitCode -eq 0 -or (Get-Service QuietPC -ErrorAction SilentlyContinue) -or
+            @(Get-ChildItem -LiteralPath $root -Force).Count -ne 0 -or
+            -not (Select-String -LiteralPath $preflightLog -SimpleMatch 'VSP preflight returned 21' -Quiet)) {
+            throw 'Installer did not distinguish an occupied installation path.'
+        }
+        $checks.occupied_path_blocked = $true
+    } finally {
+        # Remove only the empty directory created by this check.
+        if ((Test-Path -LiteralPath $root) -and @(Get-ChildItem -LiteralPath $root -Force).Count -eq 0) {
+            Remove-Item -LiteralPath $root
+        }
+        Remove-Item -LiteralPath $preflightLog -ErrorAction SilentlyContinue
+    }
     $process = Start-Process -FilePath $setup -ArgumentList '/VERYSILENT','/SUPPRESSMSGBOXES','/NORESTART','/SP-' -Wait -PassThru
     if ($process.ExitCode -ne 0) { throw 'Installer returned a failure exit code.' }
     $installed = $true
@@ -18,6 +35,9 @@ try {
     }
     $checks.install = $true
     $helper = Join-Path $root 'setup\VSP.Setup.exe'
+    $blocked = Start-Process -FilePath $helper -ArgumentList '--preflight' -Wait -PassThru
+    if ($blocked.ExitCode -ne 20) { throw 'Preflight did not distinguish the existing service.' }
+    $checks.existing_service_blocked = $true
     & $helper --verify
     if ($LASTEXITCODE) { throw 'Service verification failed.' }
     $checks.service = $true
@@ -31,7 +51,7 @@ try {
     if (-not $ui.WaitForExit(30000)) { throw 'UI initialization timed out.' }
     if ($ui.ExitCode -ne 0 -or -not (Test-Path -LiteralPath $uiReport)) { throw 'UI smoke process failed.' }
     $result = Get-Content -Raw -LiteralPath $uiReport | ConvertFrom-Json
-    if (-not $result.ui_initialized -or $result.version -ne '0.8.2') { throw 'UI window, version or profile list check failed.' }
+    if (-not $result.ui_initialized -or $result.version -ne '0.8.3') { throw 'UI window, version or profile list check failed.' }
     $checks.ui_initialization = $true
     $remove = Start-Process -FilePath (Join-Path $root 'unins000.exe') -ArgumentList '/VERYSILENT','/SUPPRESSMSGBOXES','/NORESTART' -Wait -PassThru
     if ($remove.ExitCode -ne 0) { throw 'Uninstaller failed.' }

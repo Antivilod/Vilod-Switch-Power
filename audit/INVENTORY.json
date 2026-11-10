@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "version": "0.8.2",
+  "version": "0.8.3",
   "files": [
     {
       "path": ".gitattributes",
@@ -28,14 +28,14 @@
     },
     {
       "path": ".gitignore",
-      "bytes": 661,
-      "sha256": "5471b092b91458b0581c4295c69e336608258ee7a5d040b792f88737cdecbb58",
+      "bytes": 709,
+      "sha256": "acbe5336c390ff492f495a69a42f3275ca28b70af7d1a2f7ebacfbf6c4037e22",
       "kind": "documentation-or-config"
     },
     {
       "path": "CHANGELOG.md",
-      "bytes": 1755,
-      "sha256": "8d6d7358f79193814fac5932716002165188fee12489f509e7ec0f73471006c7",
+      "bytes": 2092,
+      "sha256": "68a43efb08338f13fb4c89a48e5967d13cfdd3627c07a99ddc4d4b6378c39571",
       "kind": "documentation-or-config"
     },
     {
@@ -70,8 +70,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 8386,
-      "sha256": "18baf07a6395a31dcd86adff1da23af2dc489675a64e551159ab62f86466b898",
+      "bytes": 9138,
+      "sha256": "44f43f058ad2a99872f73c0c30ad80d6bf6bd19d9185b3fa0df4e2cc1f0b3137",
       "kind": "documentation-or-config"
     },
     {
@@ -131,7 +131,7 @@
     {
       "path": "docs/BUILD.md",
       "bytes": 7033,
-      "sha256": "13ae0b22a80f5d97be1c76fcea44aced9e74da1fff90d89628eb0fae57692fba",
+      "sha256": "305272213ae94f9ac1bb8ff7c0716db7088797beb867827bf175c23f92274bea",
       "kind": "documentation-or-config"
     },
     {
@@ -160,8 +160,8 @@
     },
     {
       "path": "docs/INSTALL.md",
-      "bytes": 4002,
-      "sha256": "7449ea888cd7e7e30b2df443ee4baaa57f9bdf71a574c6b0e2dab6f3a5e0a93e",
+      "bytes": 5172,
+      "sha256": "996feb2a77d9272390178fab583f445bc4a205e3145f7cafe3e8bdc6a800b249",
       "kind": "documentation-or-config"
     },
     {
@@ -202,8 +202,8 @@
     },
     {
       "path": "installer/VSP.iss",
-      "bytes": 3689,
-      "sha256": "810b681743589e39ac6b3a48608618f76a8b141a42f1af43ce6c4f11cd64c186",
+      "bytes": 5523,
+      "sha256": "f02a2c500be824c77eed7cddd8385bfa70384dfe9026b5485b26763495576078",
       "kind": "source-code"
     },
     {
@@ -683,7 +683,7 @@
     {
       "path": "scripts/build-installer.ps1",
       "bytes": 2503,
-      "sha256": "43c9bdb7cb60f4e39e02fcabcfa2ecba7aa2ca18dbb6d3699b1c7354fe11714d",
+      "sha256": "b007a6695d618a26e0ed5fa3ee1ec7bb77dc1d6a26c2caba36f8dde002931c9e",
       "kind": "source-code"
     },
     {
@@ -706,8 +706,8 @@
     },
     {
       "path": "scripts/test-installer.ps1",
-      "bytes": 3398,
-      "sha256": "d30698193d909a22681b1caa3bbf8b22f44b554411338c4644c034505803a13f",
+      "bytes": 4776,
+      "sha256": "877a9e0b64a4bfe76dd55b11aabbc8e320c46a156145991b0919eb5da78e2e89",
       "kind": "source-code"
     },
     {
@@ -719,7 +719,7 @@
     {
       "path": "src/QuietPC.App/App.xaml.cs",
       "bytes": 1624,
-      "sha256": "b52c787336001509dc33bd2fd65bcafc6f3ee872395aa7971b6ebfd53ae1386e",
+      "sha256": "356313e85bb124b6dc04f5041727e4f89764a60002c9caf8e4b0da7bbd76452d",
       "kind": "source"
     },
     {
@@ -887,7 +887,7 @@
     {
       "path": "src/QuietPC.App/QuietPC.App.csproj",
       "bytes": 832,
-      "sha256": "6a269de2d0673e383aabe1ffb21762c30aabafbd860100e5dca9c097a27abb14",
+      "sha256": "44b8314403b17e528ce882f35328fe733795951ec280060785f93a4224242769",
       "kind": "source"
     },
     {
@@ -1019,7 +1019,7 @@
     {
       "path": "src/QuietPC.Monitor/QuietPC.Monitor.csproj",
       "bytes": 309,
-      "sha256": "160359555cb2564f13570b50f42d0203d2a35f9e771cd10eb629943432182b9c",
+      "sha256": "135db076eaaa9366d288327330b582a389b5eb0a9253ad89e18af1fb8a94ce2a",
       "kind": "source"
     },
     {
@@ -1048,20 +1048,20 @@
     },
     {
       "path": "src/QuietPC.Setup/Program.cs",
-      "bytes": 10767,
-      "sha256": "9b8da7e9dc0736c28b1d2eaa447c5eede05dbb8b2dfe7fe217faac8b0e1b08c5",
+      "bytes": 10968,
+      "sha256": "a5cc4c109b85225cd0a81e492cdd89b3d740731e6566aebb0ebf08ded9c1922c",
       "kind": "source-code"
     },
     {
       "path": "src/QuietPC.Setup/QuietPC.Setup.csproj",
       "bytes": 571,
-      "sha256": "df41a2df17a12eb787c49194d317a805c661d15724d354c4964e1ec767d82099",
+      "sha256": "22d245b5fa1a0cbebdd157b6c82e8b6dfe8b1e8d4391f3fe9fa05cb11e866ad5",
       "kind": "documentation-or-config"
     },
     {
       "path": "src/QuietPC.Setup/app.manifest",
       "bytes": 401,
-      "sha256": "613377674321b003e5f8d7efef3998ba3ce8a9c336b092febc21526a47959673",
+      "sha256": "39eee63554419ec0768c8a9361695daae041268d667ac82c5c7a83747b12a245",
       "kind": "documentation-or-config"
     },
     {
@@ -1133,13 +1133,37 @@
     {
       "path": "tests/QuietPC.Windows.Tests/Program.cs",
       "bytes": 5703,
-      "sha256": "c597a20e74bb92b63a8df79262b444cc1fd1c67127076f0ae89ab2bb746c2e4a",
+      "sha256": "6229aa6750c4bfefb610386a8f58c0d4abc8c35f2c92bc517e8802e6578be736",
       "kind": "source-code"
     },
     {
       "path": "tests/QuietPC.Windows.Tests/QuietPC.Windows.Tests.csproj",
       "bytes": 262,
       "sha256": "8b50030b904e6c0d0a2583e8e2599591aca26016fdab5c0478d2482b7c6a462b",
+      "kind": "source-code"
+    },
+    {
+      "path": "tools/checksum/Cargo.lock",
+      "bytes": 2397,
+      "sha256": "cf41537eae2d7cb6abb0943f682640503808dade3a3e14045d17d57dd3084ef4",
+      "kind": "source-code"
+    },
+    {
+      "path": "tools/checksum/Cargo.toml",
+      "bytes": 213,
+      "sha256": "17dfb16a74d312875568faa3a3199ca165cfcd2ca32f7487b9cbbbddd0df9775",
+      "kind": "source-code"
+    },
+    {
+      "path": "tools/checksum/README.md",
+      "bytes": 1619,
+      "sha256": "a0180eb0942b84e6b784eb0ac1cc0ce169b5f3441917124bcdf5bb2f4b6c8fb1",
+      "kind": "source-code"
+    },
+    {
+      "path": "tools/checksum/src/main.rs",
+      "bytes": 2970,
+      "sha256": "bda7b912a5f5618eafe2418f74ee18642ad7d50ed6147c6c917d70413de0a687",
       "kind": "source-code"
     }
   ]

@@ -25,7 +25,7 @@ $compiler = Join-Path ${env:ProgramFiles(x86)} 'Inno Setup 6\ISCC.exe'
 if (-not (Test-Path -LiteralPath $compiler)) { throw 'Inno Setup 6 is required. Do not download an unverified replacement.' }
 & $compiler "/DRepoRoot=$((Get-Location).Path)" installer/VSP.iss
 if ($LASTEXITCODE) { throw 'Installer compilation failed' }
-$setup = Get-Item artifacts/release/VSP-0.8.2-Setup-x64.exe
+$setup = Get-Item artifacts/release/VSP-0.8.3-Setup-x64.exe
 $hash = (Get-FileHash -Algorithm SHA256 -LiteralPath $setup.FullName).Hash.ToLowerInvariant()
 "$hash  $($setup.Name)" | Set-Content -Encoding utf8NoBOM artifacts/release/SHA256SUMS.txt
 Write-Host 'Installer built. Installation and driver checks are still required.'

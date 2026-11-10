@@ -1,4 +1,4 @@
-# Сборка установщика 0.8.2
+# Сборка установщика 0.8.3
 
 Windows x64, PowerShell 7, .NET SDK 10, Inno Setup 6. Сборщик Inno Setup должен быть установлен из официального источника. Из корня:
 
@@ -6,7 +6,7 @@ Windows x64, PowerShell 7, .NET SDK 10, Inno Setup 6. Сборщик Inno Setup 
 pwsh -NoProfile -File scripts/build-installer.ps1
 ```
 
-Результат: `artifacts/release/VSP-0.8.2-Setup-x64.exe` и SHA256SUMS.txt. Сборка включает 103 теста ядра, публикует автономные app/monitor/service/setup и сохраняет лицензии runtime. Она не устанавливает приложение автоматически.
+Результат: `artifacts/release/VSP-0.8.3-Setup-x64.exe` и SHA256SUMS.txt. Сборка включает 103 теста ядра, публикует автономные app/monitor/service/setup и сохраняет лицензии runtime. Она не устанавливает приложение автоматически.
 
 Только на чистой одноразовой Windows-машине с правами администратора:
 
