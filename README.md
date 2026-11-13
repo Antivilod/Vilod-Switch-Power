@@ -1,5 +1,9 @@
 # Vilod Switch Power (VSP)
 
+## Installer and source versions
+
+The downloadable Windows installer is 0.8.2. The source tree contains 0.8.3 changes. To resolve the existing service or installation-directory message in 0.8.2, close VSP and uninstall the previous version from Windows Settings > Apps > Installed apps, then retry the installer. If Windows requests a restart, restart first. Keep your current settings backed up separately.
+
 Windows-приложение для выбора профилей питания, ограничения FPS на поддерживаемых NVIDIA GPU и мониторинга. Логотип и основные режимы сохранены.
 
 **Версия 0.8.2: исправление CPU-политик и установщик Windows x64.** Публикация установщика разрешена только после успешной Windows CI. Фактические результаты находятся в `WINDOWS-VERIFICATION.json` и `CPU-POLICY-VERIFICATION.json` выпуска. Реальные игры, температуры и термостабильность этой версии не проверены.
